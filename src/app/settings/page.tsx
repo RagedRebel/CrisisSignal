@@ -2,8 +2,7 @@
 
 import React from "react";
 import { useCrisisStore } from "@/store/useCrisisStore";
-import Link from "next/link";
-import { Sliders, ArrowLeft, RotateCcw, Save, ShieldCheck, WifiOff } from "lucide-react";
+import { Sliders, RotateCcw, Save, ShieldCheck, WifiOff } from "lucide-react";
 import { DEFAULT_WEIGHTS } from "@/engine/scoring/urgency";
 
 export default function SettingsPage() {
@@ -34,16 +33,11 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090d16] text-foreground p-6 space-y-6 max-w-4xl mx-auto">
+    <div className="h-full overflow-y-auto bg-[#090d16] p-6 text-foreground">
+      <div className="mx-auto max-w-4xl space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            className="rounded bg-slate-800 hover:bg-slate-700 p-2 text-slate-300 hover:text-white transition"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </Link>
           <div>
             <h1 className="text-xl font-bold text-white flex items-center gap-2">
               <Sliders className="h-6 w-6 text-primary" />
@@ -271,6 +265,7 @@ export default function SettingsPage() {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

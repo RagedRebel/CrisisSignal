@@ -2,10 +2,8 @@
 
 import React from "react";
 import { useCrisisStore } from "@/store/useCrisisStore";
-import Link from "next/link";
 import {
   Sparkles,
-  ArrowLeft,
   CheckCircle,
   XCircle,
   BarChart3,
@@ -71,16 +69,11 @@ export default function EvaluationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#090d16] text-foreground p-6 space-y-6">
+    <div className="h-full overflow-y-auto bg-[#090d16] p-6 text-foreground">
+      <div className="mx-auto max-w-6xl space-y-6">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
         <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            className="rounded bg-slate-800 hover:bg-slate-700 p-2 text-slate-300 hover:text-white transition"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </Link>
           <div>
             <h1 className="text-xl font-bold text-white flex items-center gap-2">
               <Award className="h-6 w-6 text-primary" />
@@ -442,6 +435,7 @@ export default function EvaluationPage() {
           Ground truth is hidden from the engine. It is applied only here, after the
           replay has already formed and ranked incidents.
         </p>
+      </div>
       </div>
     </div>
   );

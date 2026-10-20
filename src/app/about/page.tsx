@@ -1,21 +1,15 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { ArrowLeft, ShieldAlert, CheckCircle, Scale, Users, Cpu, FileText } from "lucide-react";
+import { ShieldAlert, CheckCircle, Scale, Users, Cpu, FileText } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#090d16] text-foreground p-6 space-y-6 max-w-4xl mx-auto text-xs">
+    <div className="h-full overflow-y-auto bg-[#090d16] p-6 text-foreground">
+      <div className="mx-auto max-w-4xl space-y-6 text-xs">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            className="rounded bg-slate-800 hover:bg-slate-700 p-2 text-slate-300 hover:text-white transition"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </Link>
           <div>
             <h1 className="text-xl font-bold text-white flex items-center gap-2">
               <ShieldAlert className="h-6 w-6 text-primary" />
@@ -100,6 +94,7 @@ export default function AboutPage() {
             Every coordinator override, merge confirmation, and simulated dispatch requires a mandatory reason and is written to an immutable Audit Log.
           </p>
         </div>
+      </div>
       </div>
     </div>
   );

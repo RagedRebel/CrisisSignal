@@ -20,9 +20,10 @@ import {
   PhoneCall,
   UserCheck,
   Flame,
+  X,
 } from "lucide-react";
 
-export function DetailPanel() {
+export function DetailPanel({ onClose }: { onClose?: () => void }) {
   const {
     incidents,
     selectedIncidentId,
@@ -45,11 +46,12 @@ export function DetailPanel() {
 
   if (!incident) {
     return (
-      <div className="flex h-full flex-col items-center justify-center border-l border-border bg-[#090d16] p-6 text-center text-slate-500 text-xs">
-        <FileText className="h-8 w-8 text-slate-700 mb-2" />
-        <h4 className="font-semibold text-slate-400">No Incident Selected</h4>
-        <p className="mt-1 text-[11px] text-slate-500">
-          Click on any incident card from the queue or a pin on the tactical map to inspect its explainability breakdown and provenance.
+      <div className="flex h-full flex-col items-center justify-center bg-transparent p-6 text-center text-xs text-slate-500">
+        <FileText className="mb-2 h-8 w-8 text-slate-700" />
+        <h4 className="font-semibold text-slate-400">No incident selected</h4>
+        <p className="mt-1 text-[11px] leading-relaxed text-slate-500">
+          Select an incident from the queue or a pin on the map to inspect its
+          explainability breakdown and provenance.
         </p>
       </div>
     );
@@ -79,40 +81,50 @@ export function DetailPanel() {
   };
 
   return (
-    <div className="flex h-full flex-col border-l border-border bg-[#090d16] text-xs overflow-y-auto">
+    <div className="flex h-full flex-col overflow-y-auto bg-transparent text-xs">
       {/* Incident Header & Rank */}
-      <div className="border-b border-border bg-slate-900/70 p-3">
+      <div className="sticky top-0 z-10 border-b border-slate-800 bg-[#0b1120]/95 p-3 backdrop-blur">
         <div className="flex items-start justify-between gap-2">
-          <div>
-            <div className="flex items-center gap-1.5 mb-1">
-              <span className="rounded bg-primary/20 text-primary border border-primary/40 px-2 py-0.5 font-mono font-bold text-xs">
-                Priority Rank #{incident.priority_rank}
+          <div className="min-w-0">
+            <div className="mb-1 flex flex-wrap items-center gap-1.5">
+              <span className="rounded border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-sky-300">
+                Priority #{incident.priority_rank}
               </span>
-              <span className="text-[11px] font-mono text-slate-400">
-                ID: {incident.id}
-              </span>
+              <span className="font-mono text-[10px] text-slate-500">{incident.id}</span>
               <ProvenanceBadge provenance={incident.provenance} compact />
             </div>
-            <h3 className="font-bold text-white text-sm leading-tight">{incident.title}</h3>
-            <div className="mt-1 flex items-center gap-2 text-slate-400 text-[11px]">
+            <h3 className="text-sm font-semibold leading-tight text-white">
+              {incident.title}
+            </h3>
+            <div className="mt-1 flex flex-wrap items-center gap-2 text-[10px] text-slate-400">
               <span className="flex items-center gap-1">
-                <MapPin className="h-3 w-3 text-primary" />
-                {incident.location.landmark_name || "Zone"} (±{incident.location.uncertainty_radius_m}m)
+                <MapPin className="h-3 w-3 text-sky-400" />
+                {incident.location.landmark_name || "Zone"} (±
+                {incident.location.uncertainty_radius_m}m)
               </span>
-              <span>•</span>
               <span className="flex items-center gap-1">
-                <Clock className="h-3 w-3 text-slate-400" />
-                Updated {new Date(incident.updated_at).toLocaleTimeString()}
+                <Clock className="h-3 w-3" />
+                {new Date(incident.updated_at).toLocaleTimeString()}
               </span>
             </div>
           </div>
 
-          {/* Urgency Score Pill */}
-          <div className="flex flex-col items-end">
-            <span className="font-mono text-2xl font-black text-primary">
-              {scorePercent}%
-            </span>
-            <span className="text-[10px] text-slate-400 font-mono">Urgency Score</span>
+          <div className="flex shrink-0 items-start gap-1.5">
+            <div className="flex flex-col items-end">
+              <span className="font-mono text-xl font-bold text-sky-400">
+                {scorePercent}%
+              </span>
+              <span className="font-mono text-[9px] text-slate-500">urgency</span>
+            </div>
+            {onClose && (
+              <button
+                onClick={onClose}
+                title="Close details"
+                className="rounded p-1 text-slate-500 transition-colors hover:bg-slate-800 hover:text-white"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
           </div>
         </div>
 
@@ -149,7 +161,7 @@ export function DetailPanel() {
         {incident.is_verify_urgently && (
           <div className="rounded-lg border-2 border-red-500 bg-red-950/60 p-3 text-red-200 shadow-lg">
             <div className="flex items-center gap-2 font-bold text-sm text-red-300">
-              <AlertTriangle className="h-4 w-4 text-red-400 animate-pulse" />
+              <AlertTriangle className="h-4 w-4 text-red-400" />
               <span>VERIFY URGENTLY: Low Reliability Severe Report</span>
             </div>
             <p className="mt-1 text-xs text-red-200/90 leading-relaxed">

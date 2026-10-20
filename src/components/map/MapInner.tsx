@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useCrisisStore } from "@/store/useCrisisStore";
 import { BENGALURU_CITY } from "@/data/city";
-import { Layers, AlertTriangle, ShieldAlert, Sparkles, Navigation } from "lucide-react";
+import { Layers, AlertTriangle, ShieldAlert, Sparkles, Navigation, ZoomIn, ZoomOut } from "lucide-react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -36,25 +36,20 @@ export function MapInner() {
     const map = L.map(mapContainerRef.current, {
       center: BENGALURU_CITY.center,
       zoom: BENGALURU_CITY.zoom,
-      zoomControl: true,
+      zoomControl: false,
       attributionControl: false,
       preferCanvas: true,
       minZoom: 9,
       maxZoom: 17,
     });
 
-    // Online street basemap: CARTO "dark_all" raster tiles (OSM data) are dark
-    // natively, matching the control-room theme. Attribution is rendered in the
-    // corner badge instead of Leaflet's default control.
-    const tileLayer = L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-      {
-        subdomains: "abcd",
-        maxZoom: 20,
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      }
-    ).addTo(map);
+    // Key-free OpenStreetMap raster tiles, darkened with a CSS filter (see
+    // globals.css) to match the control-room theme. No API key is required.
+    const tileLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
 
     // If the network drops, fall back to the offline schematic look instead of
     // leaving a blank base under the overlays.
@@ -266,6 +261,7 @@ export function MapInner() {
 
       marker.on("click", () => {
         selectIncident(inc.id);
+        window.dispatchEvent(new CustomEvent("crisissignal:incident-selected"));
       });
 
       marker.bindPopup(`
@@ -318,54 +314,67 @@ export function MapInner() {
       {/* Leaflet map container */}
       <div ref={mapContainerRef} className="h-full w-full min-w-[300px]" />
 
-      {/* Layer Controls Bar (Top Right) */}
-      <div className="absolute top-3 right-3 z-[1000] flex flex-col gap-1.5 rounded-lg border border-border bg-[#0f172a]/90 p-2 text-xs shadow-xl backdrop-blur-sm">
-        <span className="font-semibold text-slate-300 flex items-center gap-1 text-[11px] mb-1">
-          <Layers className="h-3 w-3 text-primary" /> Map Layers
-        </span>
-
-        <label className="flex items-center gap-2 text-slate-300 cursor-pointer hover:text-white">
-          <input
-            type="checkbox"
-            checked={showSilenceLayer}
-            onChange={(e) => setShowSilenceLayer(e.target.checked)}
-            className="rounded border-slate-700 text-purple-600 focus:ring-0"
-          />
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-purple-500"></span>
-            Silence Zones (Equity)
+      {/* Layer Controls Bar (Top Center) */}
+      <div className="absolute left-1/2 top-3 z-[1000] -translate-x-1/2 rounded-lg border border-slate-800 bg-[#0b1120]/90 px-2.5 py-1.5 text-[10px] shadow-lg backdrop-blur">
+        <div className="flex items-center gap-3">
+          <span className="flex items-center gap-1 font-medium text-slate-500">
+            <Layers className="h-3 w-3" /> Layers
           </span>
-        </label>
 
-        <label className="flex items-center gap-2 text-slate-300 cursor-pointer hover:text-white">
-          <input
-            type="checkbox"
-            checked={showUncertaintyCircles}
-            onChange={(e) => setShowUncertaintyCircles(e.target.checked)}
-            className="rounded border-slate-700 text-amber-500 focus:ring-0"
-          />
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-amber-400"></span>
-            Uncertainty Circles
-          </span>
-        </label>
+          <label className="flex cursor-pointer items-center gap-1.5 text-slate-400 transition-colors hover:text-slate-200">
+            <input
+              type="checkbox"
+              checked={showSilenceLayer}
+              onChange={(e) => setShowSilenceLayer(e.target.checked)}
+              className="h-3 w-3 rounded border-slate-700 accent-purple-500"
+            />
+            <span className="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
+            Silence zones
+          </label>
 
-        <label className="flex items-center gap-2 text-slate-300 cursor-pointer hover:text-white">
-          <input
-            type="checkbox"
-            checked={showRiver}
-            onChange={(e) => setShowRiver(e.target.checked)}
-            className="rounded border-slate-700 text-sky-500 focus:ring-0"
-          />
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-sky-500"></span>
-            Valley Channels (Stormwater)
-          </span>
-        </label>
+          <label className="flex cursor-pointer items-center gap-1.5 text-slate-400 transition-colors hover:text-slate-200">
+            <input
+              type="checkbox"
+              checked={showUncertaintyCircles}
+              onChange={(e) => setShowUncertaintyCircles(e.target.checked)}
+              className="h-3 w-3 rounded border-slate-700 accent-amber-500"
+            />
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+            Uncertainty
+          </label>
+
+          <label className="flex cursor-pointer items-center gap-1.5 text-slate-400 transition-colors hover:text-slate-200">
+            <input
+              type="checkbox"
+              checked={showRiver}
+              onChange={(e) => setShowRiver(e.target.checked)}
+              className="h-3 w-3 rounded border-slate-700 accent-sky-500"
+            />
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+            Valleys
+          </label>
+
+          <span className="h-3.5 w-px bg-slate-800" />
+
+          <button
+            onClick={() => mapInstanceRef.current?.zoomIn()}
+            title="Zoom in"
+            className="rounded p-0.5 text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
+          >
+            <ZoomIn className="h-3.5 w-3.5" />
+          </button>
+          <button
+            onClick={() => mapInstanceRef.current?.zoomOut()}
+            title="Zoom out"
+            className="rounded p-0.5 text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
+          >
+            <ZoomOut className="h-3.5 w-3.5" />
+          </button>
+        </div>
       </div>
 
       {/* Basemap attribution / offline fallback notice */}
-      <div className="absolute bottom-3 right-3 z-[1000] max-w-[430px] rounded border border-slate-800 bg-[#0f172a]/80 px-2 py-1 text-[10px] text-slate-500 backdrop-blur-sm">
+      <div className="absolute bottom-1 left-1/2 z-[1000] -translate-x-1/2 whitespace-nowrap rounded px-2 py-0.5 text-[9px] text-slate-600 backdrop-blur-sm">
         {tilesUnavailable ? (
           <>Streets unavailable — schematic base · district polygons &amp; rivers</>
         ) : (
@@ -375,39 +384,30 @@ export function MapInner() {
               href="https://www.openstreetmap.org/copyright"
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-slate-600 underline-offset-2 hover:text-slate-300"
+              className="underline decoration-slate-700 underline-offset-2 hover:text-slate-400"
             >
               OpenStreetMap
             </a>{" "}
-            contributors &copy;{" "}
-            <a
-              href="https://carto.com/attributions"
-              target="_blank"
-              rel="noreferrer"
-              className="underline decoration-slate-600 underline-offset-2 hover:text-slate-300"
-            >
-              CARTO
-            </a>{" "}
-            — schematic overlays: wards, rivers, incidents
+            contributors — overlays are schematic
           </>
         )}
       </div>
 
-      {/* Legend Badge (Bottom Left) */}
-      <div className="absolute bottom-3 left-3 z-[1000] rounded-lg border border-border bg-[#0f172a]/90 p-2.5 text-[11px] shadow-lg backdrop-blur-sm space-y-1">
-        <div className="font-semibold text-slate-300">Priority Tier Pins</div>
+      {/* Legend Badge (Bottom Center) */}
+      <div className="absolute bottom-7 left-1/2 z-[1000] -translate-x-1/2 rounded-md border border-slate-800 bg-[#0b1120]/90 px-2.5 py-1 text-[10px] shadow-lg backdrop-blur">
         <div className="flex items-center gap-3">
+          <span className="font-medium text-slate-500">Priority</span>
           <span className="flex items-center gap-1 text-slate-400">
-            <span className="h-2.5 w-2.5 rounded-full bg-red-500"></span> #1-2 Critical
+            <span className="h-2 w-2 rounded-full bg-red-500"></span> #1–2
           </span>
           <span className="flex items-center gap-1 text-slate-400">
-            <span className="h-2.5 w-2.5 rounded-full bg-orange-500"></span> #3-5 High
+            <span className="h-2 w-2 rounded-full bg-orange-500"></span> #3–5
           </span>
           <span className="flex items-center gap-1 text-slate-400">
-            <span className="h-2.5 w-2.5 rounded-full bg-yellow-500"></span> #6-8 Med
+            <span className="h-2 w-2 rounded-full bg-yellow-500"></span> #6–8
           </span>
           <span className="flex items-center gap-1 text-slate-400">
-            <span className="h-2.5 w-2.5 rounded-full bg-blue-500"></span> Lower
+            <span className="h-2 w-2 rounded-full bg-blue-500"></span> Lower
           </span>
         </div>
       </div>

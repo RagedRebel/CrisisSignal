@@ -15,7 +15,14 @@ export function BaselineComparison() {
   const crisissignalSorted = [...incidents].sort((a, b) => b.urgency_score - a.urgency_score);
 
   return (
-    <div className="absolute inset-x-4 top-[100px] z-40 max-h-[80vh] overflow-y-auto rounded-xl border border-blue-500/50 bg-[#0b1120]/95 p-5 shadow-2xl backdrop-blur-md text-xs">
+    <div
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      onClick={() => setShowBaselineComparison(false)}
+    >
+      <div
+        className="max-h-[86vh] w-full max-w-5xl overflow-y-auto rounded-xl border border-slate-700 bg-[#0b1120] p-5 text-xs shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
       <div className="flex items-center justify-between border-b border-border pb-3 mb-4">
         <div>
           <h3 className="text-base font-bold text-white flex items-center gap-2">
@@ -130,6 +137,7 @@ export function BaselineComparison() {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
