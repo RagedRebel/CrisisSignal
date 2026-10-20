@@ -21,6 +21,7 @@ import {
 
 const NAV_ITEMS = [
   { href: "/", label: "Dashboard" },
+  { href: "/reports", label: "Reports" },
   { href: "/evaluation", label: "Evaluation" },
   { href: "/audit", label: "Audit Log" },
   { href: "/settings", label: "Settings" },

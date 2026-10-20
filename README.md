@@ -24,6 +24,50 @@ there are no API keys, database calls, tile requests or live feeds at runtime.
 
 ---
 
+## Prototype status
+
+**Working prototype.** CrisisSignal is a functional offline simulation built with
+synthetic Bengaluru flood data. The console, replay controls, incident analysis,
+evaluation views, audit log, and coordinator workflows are implemented and tested.
+It is not yet connected to live sensors, government feeds, emergency dispatch systems,
+or a production database.
+
+## UI screenshots
+
+The following screenshots show the main user-facing parts of the prototype. The image
+files live under [`docs/screenshots/`](C:/Users/HP/Desktop/college/srinivas-hackathon-demo/docs/screenshots/).
+
+### Coordinator console
+
+The main workspace combines the tactical map, incident queue, priority ranking, and
+incident details.
+
+![CrisisSignal coordinator console](docs/screenshots/console.png)
+
+### Incident details and “Why this rank?”
+
+The detail panel shows extracted evidence, incident severity, reliability, urgency
+factors, and recommended verification or action.
+
+![CrisisSignal incident details](docs/screenshots/incident-detail.png)
+
+### Report inbox
+
+The Reports page stores the normalized reports arriving from social, official,
+sensor, volunteer, SMS, and call-transcript sources. Reports can be searched,
+filtered by source and processing state, and opened to inspect their provenance.
+
+![CrisisSignal report inbox](docs/screenshots/report-inbox.png)
+
+### Silence Zone
+
+The Silence Layer highlights exposed zones that may have an unreported need, including
+connectivity gaps, coverage deficits, neighboring signals, and suggested welfare checks.
+
+![CrisisSignal silence zone](docs/screenshots/silence-zone.png)
+
+---
+
 ## Why this exists
 
 Flood control rooms face two opposite failure modes:
