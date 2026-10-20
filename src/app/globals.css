@@ -4,21 +4,21 @@
 
 @layer base {
   :root {
-    --background: #090d16;
-    --foreground: #f1f5f9;
-    --card: #0f172a;
-    --card-foreground: #f8fafc;
-    --border: #1e293b;
-    --primary: #38bdf8;
-    --primary-foreground: #0284c7;
-    --secondary: #1e293b;
-    --secondary-foreground: #94a3b8;
-    --destructive: #ef4444;
-    --destructive-foreground: #f8fafc;
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
-    --accent: #334155;
-    --accent-foreground: #f8fafc;
+    --background: #f5f7fb;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --border: #e2e8f0;
+    --primary: #0284c7;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #475569;
+    --destructive: #dc2626;
+    --destructive-foreground: #ffffff;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #e0f2fe;
+    --accent-foreground: #0369a1;
   }
 }
 
@@ -29,6 +29,11 @@ body {
 
 body {
   background-color: var(--background);
+  background-image: radial-gradient(
+    1200px 600px at 50% -10%,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 62%
+  );
   color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,11 +41,16 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid rgba(56, 189, 248, 0.55);
+  outline: 2px solid rgba(2, 132, 199, 0.45);
   outline-offset: 2px;
 }
 
-/* Custom scrollbars for control room density */
+input[type="range"] {
+  accent-color: #0284c7;
+  cursor: pointer;
+}
+
+/* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -49,70 +59,63 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #263244;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a4a60;
+  background: #94a3b8;
 }
 
 /* Evidence span highlight styles */
 .highlight-evidence {
-  background-color: rgba(56, 189, 248, 0.2);
-  border-bottom: 2px solid #38bdf8;
+  background-color: #e0f2fe;
+  border-bottom: 2px solid #0284c7;
   padding: 1px 3px;
-  border-radius: 2px;
+  border-radius: 3px;
   font-weight: 500;
 }
 
 .highlight-evidence:hover {
-  background-color: rgba(56, 189, 248, 0.35);
+  background-color: #bae6fd;
 }
 
-/* Leaflet Map overrides for dark control room */
+/* Leaflet Map overrides for the light theme */
 .leaflet-container {
-  background: #0b1120 !important;
+  background: #e8eef5 !important;
   font-family: inherit !important;
 }
 
-/* Key-free OSM raster tiles are light by default. Inverting and re-hueing them
-   yields a muted dark basemap without a keyed tile provider. Leaflet's own
-   stylesheet sets `filter: inherit` on tiles, so this needs higher specificity. */
-.leaflet-container .leaflet-tile {
-  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9) saturate(0.5) !important;
-}
-
 .leaflet-popup-content-wrapper {
-  background: #0f172a !important;
-  color: #f1f5f9 !important;
-  border: 1px solid #334155 !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7) !important;
-  border-radius: 8px !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 12px 30px -12px rgba(15, 23, 42, 0.28) !important;
+  border-radius: 10px !important;
 }
 
 .leaflet-popup-tip {
-  background: #0f172a !important;
+  background: #ffffff !important;
 }
 
 .leaflet-bar a {
-  background: #0f172a !important;
-  color: #cbd5e1 !important;
-  border-color: #1e293b !important;
+  background: #ffffff !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
 }
 
 .leaflet-bar a:hover {
-  background: #1e293b !important;
-  color: #ffffff !important;
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
 }
 
 .leaflet-tooltip {
-  background: #0b1120 !important;
-  border: 1px solid #334155 !important;
-  color: #e2e8f0 !important;
-  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.6) !important;
-  border-radius: 6px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+  box-shadow: 0 8px 20px -8px rgba(15, 23, 42, 0.22) !important;
+  border-radius: 8px !important;
 }
 
 .leaflet-tooltip-top:before {
-  border-top-color: #334155 !important;
+  border-top-color: #e2e8f0 !important;
 }

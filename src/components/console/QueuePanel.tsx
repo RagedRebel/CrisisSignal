@@ -102,15 +102,15 @@ export function QueuePanel({
 
   if (collapsed) {
     return (
-      <aside className="absolute inset-y-0 left-0 z-20 flex w-11 flex-col items-center gap-3 border-r border-slate-800/80 bg-[#0b1120]/95 py-3 backdrop-blur-xl">
+      <aside className="absolute inset-y-0 left-0 z-20 flex w-11 flex-col items-center gap-3 border-r border-slate-200 bg-white py-3">
         <button
           onClick={onToggle}
           title="Expand report queue"
-          className="rounded-md border border-slate-800 bg-slate-900 p-1.5 text-slate-400 transition-colors hover:text-white"
+          className="rounded-md border border-slate-200 bg-white p-1.5 text-slate-500 transition-colors hover:text-slate-900"
         >
           <ChevronRight className="h-3.5 w-3.5" />
         </button>
-        <span className="rounded-full border border-slate-700 bg-slate-800 px-1.5 py-0.5 font-mono text-[10px] text-slate-300">
+        <span className="rounded-full border border-slate-300 bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] text-slate-600">
           {incidents.length}
         </span>
         <span className="mt-1 text-[10px] uppercase tracking-[0.2em] text-slate-600 [writing-mode:vertical-rl]">
@@ -121,42 +121,42 @@ export function QueuePanel({
   }
 
   return (
-    <aside className="absolute inset-y-0 left-0 z-20 flex w-[360px] max-w-[92vw] flex-col border-r border-slate-800/80 bg-[#0b1120]/95 text-xs backdrop-blur-xl">
+    <aside className="absolute inset-y-0 left-0 z-20 flex w-[360px] max-w-[92vw] flex-col border-r border-slate-200 bg-white text-xs shadow-[8px_0_32px_-18px_rgba(15,23,42,0.25)]">
       {/* Panel header */}
-      <div className="border-b border-slate-800 px-3.5 py-3">
+      <div className="border-b border-slate-200 px-3.5 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <h2 className="text-[13px] font-semibold text-white">Report queue</h2>
-            <span className="rounded-full border border-slate-700 bg-slate-800 px-1.5 py-0.5 font-mono text-[10px] text-slate-300">
+            <h2 className="text-[13px] font-semibold text-slate-900">Report queue</h2>
+            <span className="rounded-full border border-slate-300 bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] text-slate-600">
               {incidents.length}
             </span>
           </div>
           <button
             onClick={onToggle}
             title="Collapse panel"
-            className="rounded-md p-1 text-slate-500 transition-colors hover:bg-slate-800 hover:text-white"
+            className="rounded-md p-1 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
         </div>
         <div className="mt-1.5 flex items-center gap-2 text-[10px] text-slate-500">
           <span>
-            <b className="font-semibold text-slate-300">{criticalCount}</b> critical
+            <b className="font-semibold text-slate-600">{criticalCount}</b> critical
           </span>
           <span className="text-slate-700">·</span>
           <span>
-            <b className="font-semibold text-slate-300">{needsLocationReports.length}</b>{" "}
+            <b className="font-semibold text-slate-600">{needsLocationReports.length}</b>{" "}
             unlocated
           </span>
           <span className="text-slate-700">·</span>
           <span>
-            <b className="font-semibold text-slate-300">{flaggedWards.length}</b> silent zones
+            <b className="font-semibold text-slate-600">{flaggedWards.length}</b> silent zones
           </span>
         </div>
       </div>
 
       {/* Lane tabs */}
-      <div className="grid grid-cols-4 gap-1 border-b border-slate-800 bg-slate-900/40 p-1.5">
+      <div className="grid grid-cols-4 gap-1 border-b border-slate-200 bg-slate-50/80 p-1.5">
         {TABS.map((tab) => {
           const Icon = tab.icon;
           const active = activeLane === tab.id;
@@ -166,8 +166,8 @@ export function QueuePanel({
               onClick={() => setActiveLane(tab.id)}
               className={`flex items-center justify-center gap-1 rounded-md px-1 py-1.5 text-[10px] font-medium transition-colors ${
                 active
-                  ? "bg-slate-800 text-white"
-                  : "text-slate-500 hover:bg-slate-800/60 hover:text-slate-200"
+                  ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-200"
+                  : "text-slate-500 hover:bg-white/70 hover:text-slate-800"
               }`}
             >
               <Icon className="h-3 w-3" />
@@ -175,7 +175,7 @@ export function QueuePanel({
               {laneCount(tab.id) > 0 && (
                 <span
                   className={`rounded-full px-1 font-mono text-[9px] ${
-                    active ? "bg-slate-700 text-slate-200" : "bg-slate-800 text-slate-500"
+                    active ? "bg-slate-100 text-slate-600" : "bg-slate-200/70 text-slate-500"
                   }`}
                 >
                   {laneCount(tab.id)}
@@ -189,7 +189,7 @@ export function QueuePanel({
       {activeLane === "queue" && (
         <>
           {/* Search & filters */}
-          <div className="space-y-1.5 border-b border-slate-800 p-2.5">
+          <div className="space-y-1.5 border-b border-slate-200 p-2.5">
             <div className="relative">
               <Search className="absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-slate-500" />
               <input
@@ -197,17 +197,17 @@ export function QueuePanel({
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search incidents or landmarks"
-                className="w-full rounded-md border border-slate-800 bg-slate-900 py-1.5 pl-8 pr-2 text-xs text-white placeholder-slate-600 focus:border-slate-600 focus:outline-none"
+                className="w-full rounded-md border border-slate-200 bg-white py-1.5 pl-8 pr-2 text-xs text-slate-900 placeholder-slate-400 transition-colors focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-100"
               />
             </div>
 
             <div className="flex items-center justify-between text-[10px] text-slate-500">
-              <label className="flex cursor-pointer items-center gap-1.5 hover:text-slate-300">
+              <label className="flex cursor-pointer items-center gap-1.5 hover:text-slate-600">
                 <input
                   type="checkbox"
                   checked={filterLifeRiskOnly}
                   onChange={(e) => setFilterLifeRiskOnly(e.target.checked)}
-                  className="h-3 w-3 rounded border-slate-700 accent-rose-500"
+                  className="h-3 w-3 rounded border-slate-300 accent-rose-500"
                 />
                 Life risks only
               </label>
@@ -216,13 +216,13 @@ export function QueuePanel({
               </span>
             </div>
 
-            <div className="flex items-center gap-1 rounded-md border border-slate-800 bg-slate-950 p-0.5 text-[10px]">
+            <div className="flex items-center gap-1 rounded-md border border-slate-200 bg-slate-50 p-0.5 text-[10px]">
               <button
                 onClick={() => setChannelFilter("all")}
                 className={`flex-1 rounded px-1 py-1 font-medium transition-colors ${
                   channelFilter === "all"
-                    ? "bg-slate-800 text-white"
-                    : "text-slate-500 hover:text-slate-300"
+                    ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-200"
+                    : "text-slate-500 hover:text-slate-800"
                 }`}
               >
                 All channels
@@ -231,8 +231,8 @@ export function QueuePanel({
                 onClick={() => setChannelFilter("primary_sources")}
                 className={`flex flex-1 items-center justify-center gap-1 rounded px-1 py-1 font-medium transition-colors ${
                   channelFilter === "primary_sources"
-                    ? "bg-blue-950 text-blue-200"
-                    : "text-slate-500 hover:text-blue-300"
+                    ? "bg-blue-50 text-blue-700 shadow-sm ring-1 ring-blue-200"
+                    : "text-slate-500 hover:text-blue-700"
                 }`}
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
@@ -242,15 +242,15 @@ export function QueuePanel({
           </div>
 
           {/* Ranked incident list */}
-          <div className="flex-1 divide-y divide-slate-800/70 overflow-y-auto">
+          <div className="flex-1 divide-y divide-slate-100 overflow-y-auto">
             {filteredIncidents.length === 0 ? (
               <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center">
-                <Radio className="h-6 w-6 text-slate-700" />
-                <p className="text-[11px] font-medium text-slate-400">
+                <Radio className="h-6 w-6 text-slate-300" />
+                <p className="text-[11px] font-medium text-slate-500">
                   No incidents in the queue yet
                 </p>
                 <p className="text-[10px] leading-relaxed text-slate-600">
-                  Press Play or jump to a case in the top bar to begin processing reports.
+                  Press Play in the top bar to begin processing reports.
                 </p>
               </div>
             ) : (
@@ -268,10 +268,10 @@ export function QueuePanel({
                         new CustomEvent("crisissignal:incident-selected")
                       );
                     }}
-                    className={`block w-full p-3 text-left transition-colors hover:bg-slate-800/40 ${
+                    className={`block w-full p-3 text-left transition-colors ${
                       isSelected
-                        ? "border-l-2 border-l-sky-400 bg-slate-800/50"
-                        : "border-l-2 border-l-transparent"
+                        ? "border-l-2 border-l-sky-500 bg-sky-50"
+                        : "border-l-2 border-l-transparent hover:bg-slate-50"
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2">
@@ -279,10 +279,10 @@ export function QueuePanel({
                         <span
                           className={`flex h-5 w-5 shrink-0 items-center justify-center rounded font-mono text-[10px] font-bold ${
                             inc.priority_rank <= 2
-                              ? "border border-red-900/70 bg-red-950/60 text-red-300"
+                              ? "border border-red-200 bg-red-50 text-red-600"
                               : inc.priority_rank <= 5
-                              ? "border border-amber-900/70 bg-amber-950/60 text-amber-300"
-                              : "border border-slate-700 bg-slate-800 text-slate-400"
+                              ? "border border-amber-200 bg-amber-50 text-amber-600"
+                              : "border border-slate-300 bg-slate-100 text-slate-500"
                           }`}
                         >
                           {inc.priority_rank}
@@ -291,7 +291,7 @@ export function QueuePanel({
                         {inc.rank_delta !== undefined && inc.rank_delta !== 0 && (
                           <span
                             className={`flex shrink-0 items-center font-mono text-[9px] ${
-                              inc.rank_delta > 0 ? "text-emerald-400" : "text-rose-400"
+                              inc.rank_delta > 0 ? "text-emerald-500" : "text-rose-500"
                             }`}
                             title={`Rank moved ${inc.rank_delta > 0 ? "up" : "down"} by ${Math.abs(
                               inc.rank_delta
@@ -306,7 +306,7 @@ export function QueuePanel({
                           </span>
                         )}
 
-                        <span className="truncate text-[12px] font-medium text-slate-200">
+                        <span className="truncate text-[12px] font-medium text-slate-700">
                           {inc.title}
                         </span>
                       </div>
@@ -314,10 +314,10 @@ export function QueuePanel({
                       <span
                         className={`shrink-0 rounded px-1.5 py-0.5 font-mono text-[10px] font-semibold ${
                           scorePercent >= 75
-                            ? "border border-red-900/70 bg-red-950/60 text-red-300"
+                            ? "border border-red-200 bg-red-50 text-red-600"
                             : scorePercent >= 50
-                            ? "border border-amber-900/70 bg-amber-950/60 text-amber-300"
-                            : "border border-slate-700 bg-slate-800 text-slate-400"
+                            ? "border border-amber-200 bg-amber-50 text-amber-600"
+                            : "border border-slate-300 bg-slate-100 text-slate-500"
                         }`}
                       >
                         {scorePercent}%
@@ -334,13 +334,13 @@ export function QueuePanel({
                       )}
 
                       {inc.fairness_boost_applied && (
-                        <span className="flex items-center gap-1 rounded border border-purple-900/70 bg-purple-950/60 px-1.5 py-0.5 text-purple-300">
+                        <span className="flex items-center gap-1 rounded border border-purple-200 bg-purple-50 px-1.5 py-0.5 text-purple-600">
                           <Sparkles className="h-2.5 w-2.5" /> Fairness
                         </span>
                       )}
 
                       {inc.source_report_ids.length > 1 && (
-                        <span className="rounded border border-slate-800 bg-slate-900 px-1.5 py-0.5 font-mono text-slate-400">
+                        <span className="rounded border border-slate-200 bg-white px-1.5 py-0.5 font-mono text-slate-500">
                           {inc.source_report_ids.length} reports
                         </span>
                       )}
@@ -348,23 +348,23 @@ export function QueuePanel({
                       <span
                         className={`rounded px-1.5 py-0.5 font-mono ${
                           inc.reliability_score >= 70
-                            ? "bg-emerald-950/60 text-emerald-300"
+                            ? "bg-emerald-50 text-emerald-600"
                             : inc.reliability_score >= 45
-                            ? "bg-slate-800 text-slate-400"
-                            : "bg-rose-950/60 text-rose-300"
+                            ? "bg-slate-100 text-slate-500"
+                            : "bg-rose-50 text-rose-600"
                         }`}
                       >
                         Rel {inc.reliability_score}
                       </span>
 
                       {inc.status === "dispatched" && (
-                        <span className="rounded border border-sky-900/70 bg-sky-950/60 px-1.5 py-0.5 text-sky-300">
+                        <span className="rounded border border-sky-200 bg-sky-50/60 px-1.5 py-0.5 text-sky-600">
                           Dispatched
                         </span>
                       )}
                     </div>
 
-                    <div className="mt-2 flex h-1 w-full overflow-hidden rounded-full bg-slate-900">
+                    <div className="mt-2 flex h-1 w-full overflow-hidden rounded-full bg-slate-200/70">
                       <div
                         style={{ width: `${(b.life_risk_component / 0.3) * 30}%` }}
                         className="bg-red-500"
@@ -398,13 +398,15 @@ export function QueuePanel({
                     </div>
 
                     <div className="mt-1.5 flex items-center justify-between font-mono text-[10px] text-slate-500">
-                      <span className="truncate">
+                      <span className="min-w-0 truncate">
                         {inc.people_count_display !== "Unknown"
                           ? inc.people_count_display
                           : "Count unknown"}
                         {inc.water_band ? ` · ${inc.water_band}` : ""}
                       </span>
-                      <span className="ml-2 shrink-0">{inc.channels.join(", ")}</span>
+                      <span className="ml-2 min-w-0 max-w-[48%] truncate text-right">
+                        {inc.channels.join(", ")}
+                      </span>
                     </div>
                   </button>
                 );
@@ -424,9 +426,9 @@ export function QueuePanel({
           </p>
 
           {needsLocationReports.length === 0 ? (
-            <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-5 text-center">
+            <div className="rounded-lg border border-slate-200 bg-white p-5 text-center">
               <CheckCircle2 className="mx-auto mb-1.5 h-5 w-5 text-emerald-500" />
-              <p className="text-[11px] font-medium text-slate-300">
+              <p className="text-[11px] font-medium text-slate-600">
                 All reports successfully anchored
               </p>
               <p className="mt-0.5 text-[10px] text-slate-500">
@@ -437,22 +439,22 @@ export function QueuePanel({
             needsLocationReports.map((rep) => (
               <div
                 key={rep.id}
-                className="space-y-2 rounded-lg border border-slate-800 bg-slate-900/50 p-3"
+                className="space-y-2 rounded-lg border border-slate-200 bg-slate-50 p-3"
               >
                 <div className="flex items-center justify-between font-mono text-[10px] text-slate-500">
-                  <span className="font-semibold text-amber-300">{rep.id}</span>
+                  <span className="font-semibold text-amber-600">{rep.id}</span>
                   <span>{rep.raw.channel}</span>
                 </div>
-                <p className="rounded border border-slate-800 bg-slate-950 p-2 text-[11px] leading-relaxed text-slate-200">
+                <p className="rounded border border-slate-200 bg-white p-2 text-[11px] leading-relaxed text-slate-700">
                   &quot;{rep.raw.raw_text}&quot;
                 </p>
                 <p className="flex items-start gap-1.5 text-[10px] text-slate-500">
-                  <MapPinOff className="mt-0.5 h-3 w-3 shrink-0 text-amber-400/70" />
+                  <MapPinOff className="mt-0.5 h-3 w-3 shrink-0 text-amber-500/70" />
                   {rep.location.notes || "No landmark matched in the gazetteer."}
                 </p>
                 <button
                   onClick={() => setSelectedReportForLoc(rep.id)}
-                  className="w-full rounded-md border border-amber-800/70 bg-amber-950/40 py-1 text-[10px] font-medium text-amber-200 transition-colors hover:bg-amber-900/40"
+                  className="w-full rounded-md border border-amber-200 bg-amber-50 py-1 text-[10px] font-medium text-amber-700 transition-colors hover:bg-amber-100"
                 >
                   Assign location anchor
                 </button>
@@ -471,9 +473,9 @@ export function QueuePanel({
           </p>
 
           {suggestedMerges.length === 0 ? (
-            <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-5 text-center">
+            <div className="rounded-lg border border-slate-200 bg-white p-5 text-center">
               <CheckCircle2 className="mx-auto mb-1.5 h-5 w-5 text-blue-500" />
-              <p className="text-[11px] font-medium text-slate-300">
+              <p className="text-[11px] font-medium text-slate-600">
                 No ambiguous merges pending
               </p>
               <p className="mt-0.5 text-[10px] leading-relaxed text-slate-500">
@@ -487,10 +489,10 @@ export function QueuePanel({
               return (
                 <div
                   key={sug.id}
-                  className="space-y-2.5 rounded-lg border border-slate-800 bg-slate-900/50 p-3"
+                  className="space-y-2.5 rounded-lg border border-slate-200 bg-slate-50 p-3"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1.5 text-[11px] font-medium text-blue-300">
+                    <span className="flex items-center gap-1.5 text-[11px] font-medium text-blue-600">
                       <GitMerge className="h-3 w-3" />
                       {Math.round(sug.confidence * 100)}% match
                     </span>
@@ -500,18 +502,18 @@ export function QueuePanel({
                   </div>
 
                   <div className="grid grid-cols-2 gap-1.5 text-[10px]">
-                    <div className="rounded border border-slate-800 bg-slate-950 p-2">
+                    <div className="rounded border border-slate-200 bg-white p-2">
                       <p className="mb-0.5 text-slate-500">Target incident</p>
-                      <p className="truncate font-medium text-slate-200">
+                      <p className="truncate font-medium text-slate-700">
                         {incA?.title || sug.incident_a_id}
                       </p>
                       <p className="text-slate-600">
                         {incA?.source_report_ids.length} reports
                       </p>
                     </div>
-                    <div className="rounded border border-slate-800 bg-slate-950 p-2">
+                    <div className="rounded border border-slate-200 bg-white p-2">
                       <p className="mb-0.5 text-slate-500">Incoming</p>
-                      <p className="truncate font-medium text-slate-200">
+                      <p className="truncate font-medium text-slate-700">
                         Report {sug.incident_b_id}
                       </p>
                       <p className="text-slate-600">Awaiting decision</p>
@@ -520,13 +522,13 @@ export function QueuePanel({
 
                   <div className="space-y-1 text-[10px]">
                     {sug.overlap_reasons.map((r, i) => (
-                      <p key={i} className="flex items-start gap-1 text-emerald-400/90">
+                      <p key={i} className="flex items-start gap-1 text-emerald-500/90">
                         <ArrowRight className="mt-0.5 h-2.5 w-2.5 shrink-0" />
                         {r}
                       </p>
                     ))}
                     {sug.conflicts.map((c, i) => (
-                      <p key={i} className="flex items-start gap-1 text-amber-400/90">
+                      <p key={i} className="flex items-start gap-1 text-amber-500/90">
                         <AlertTriangle className="mt-0.5 h-2.5 w-2.5 shrink-0" />
                         {c}
                       </p>
@@ -538,7 +540,7 @@ export function QueuePanel({
                       const reason = window.prompt("Reason for confirming merge:");
                       if (reason) confirmSuggestedMerge(sug.id, reason);
                     }}
-                    className="w-full rounded-md border border-blue-800/70 bg-blue-950/40 py-1 text-[10px] font-medium text-blue-200 transition-colors hover:bg-blue-900/40"
+                    className="w-full rounded-md border border-blue-200 bg-blue-50 py-1 text-[10px] font-medium text-blue-700 transition-colors hover:bg-blue-100"
                   >
                     Confirm merge
                   </button>
@@ -559,9 +561,9 @@ export function QueuePanel({
           </p>
 
           {flaggedWards.length === 0 ? (
-            <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-5 text-center">
+            <div className="rounded-lg border border-slate-200 bg-white p-5 text-center">
               <ShieldAlert className="mx-auto mb-1.5 h-5 w-5 text-slate-600" />
-              <p className="text-[11px] font-medium text-slate-300">
+              <p className="text-[11px] font-medium text-slate-600">
                 No silent zones flagged
               </p>
               <p className="mt-0.5 text-[10px] text-slate-500">
@@ -572,23 +574,23 @@ export function QueuePanel({
             flaggedWards.map((w) => (
               <div
                 key={w.id}
-                className="space-y-2.5 rounded-lg border border-purple-900/50 bg-purple-950/10 p-3"
+                className="space-y-2.5 rounded-lg border border-purple-200 bg-purple-50 p-3"
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <h4 className="truncate text-[11px] font-semibold text-white">
+                    <h4 className="truncate text-[11px] font-semibold text-slate-900">
                       {w.name} <span className="font-mono text-[9px] text-slate-500">({w.code})</span>
                     </h4>
                     <p className="text-[10px] text-slate-500">
                       {w.population.toLocaleString()} people · {w.area_sq_km} km²
                     </p>
                   </div>
-                  <span className="shrink-0 font-mono text-sm font-bold text-purple-300">
+                  <span className="shrink-0 font-mono text-sm font-bold text-purple-600">
                     {w.silence_score.toFixed(2)}
                   </span>
                 </div>
 
-                <ul className="space-y-0.5 text-[10px] text-purple-200/80">
+                <ul className="space-y-0.5 text-[10px] text-purple-700/80">
                   {w.silence_reasons.map((r, i) => (
                     <li key={i} className="flex items-start gap-1">
                       <span className="text-purple-500">•</span>
@@ -598,7 +600,7 @@ export function QueuePanel({
                 </ul>
 
                 {w.welfare_check_assigned ? (
-                  <p className="rounded border border-emerald-900/60 bg-emerald-950/40 p-1.5 text-[10px] text-emerald-300">
+                  <p className="rounded border border-emerald-200 bg-emerald-50 p-1.5 text-[10px] text-emerald-700">
                     Welfare check assigned — {w.welfare_check_assigned.action_type}
                   </p>
                 ) : (
@@ -614,7 +616,7 @@ export function QueuePanel({
                         );
                       }
                     }}
-                    className="w-full rounded-md border border-purple-800/70 bg-purple-950/40 py-1 text-[10px] font-medium text-purple-200 transition-colors hover:bg-purple-900/40"
+                    className="w-full rounded-md border border-purple-200/70 bg-purple-50 py-1 text-[10px] font-medium text-purple-700 transition-colors hover:bg-purple-100"
                   >
                     Assign welfare check
                   </button>
@@ -626,32 +628,32 @@ export function QueuePanel({
       )}
 
       {/* Footer disclaimer */}
-      <div className="border-t border-slate-800/70 px-3 py-1.5 text-[9px] leading-relaxed text-slate-600">
+      <div className="border-t border-slate-200 bg-slate-50/60 px-3 py-1.5 text-[9px] leading-relaxed text-slate-500">
         Historical replay on real 2022 flood dates, 100% synthetic events. Dispatch
         actions are simulated.
       </div>
 
       {/* Manual location assignment modal */}
       {selectedReportForLoc && (
-        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/70 p-4">
-          <div className="w-full max-w-md rounded-xl border border-slate-700 bg-[#0b1120] p-5 text-xs shadow-2xl">
-            <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-white">
-              <MapPin className="h-4 w-4 text-amber-400" /> Assign location anchor
+        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-slate-900/30 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-5 text-xs shadow-2xl">
+            <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-900">
+              <MapPin className="h-4 w-4 text-amber-500" /> Assign location anchor
             </h3>
-            <p className="mb-3 text-[11px] leading-relaxed text-slate-400">
+            <p className="mb-3 text-[11px] leading-relaxed text-slate-500">
               Anchor this unlocated report to a known landmark based on call-back or
               field confirmation.
             </p>
 
             <form onSubmit={handleManualLocationSubmit} className="space-y-3">
               <div>
-                <label className="mb-1 block text-[11px] font-medium text-slate-300">
+                <label className="mb-1 block text-[11px] font-medium text-slate-600">
                   Landmark anchor
                 </label>
                 <select
                   value={chosenLandmarkId}
                   onChange={(e) => setChosenLandmarkId(e.target.value)}
-                  className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs text-white focus:border-sky-500 focus:outline-none"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs text-slate-900 focus:border-sky-500 focus:outline-none"
                 >
                   {BENGALURU_LANDMARKS.map((lm) => (
                     <option key={lm.id} value={lm.id}>
@@ -662,30 +664,30 @@ export function QueuePanel({
               </div>
 
               <div>
-                <label className="mb-1 block text-[11px] font-medium text-slate-300">
-                  Coordinator reason <span className="text-red-400">*</span>
+                <label className="mb-1 block text-[11px] font-medium text-slate-600">
+                  Coordinator reason <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   value={locReason}
                   onChange={(e) => setLocReason(e.target.value)}
                   placeholder="e.g. Spoke with reporter on telephone call-back; confirmed they are adjacent to..."
                   rows={2}
-                  className="w-full rounded-md border border-slate-700 bg-slate-900 p-2 text-xs text-white placeholder-slate-600 focus:border-sky-500 focus:outline-none"
+                  className="w-full rounded-md border border-slate-300 bg-white p-2 text-xs text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:outline-none"
                   required
                 />
               </div>
 
-              <div className="flex justify-end gap-2 border-t border-slate-800 pt-3">
+              <div className="flex justify-end gap-2 border-t border-slate-200 pt-3">
                 <button
                   type="button"
                   onClick={() => setSelectedReportForLoc(null)}
-                  className="rounded-md bg-slate-800 px-3 py-1.5 text-xs text-slate-300 transition-colors hover:bg-slate-700"
+                  className="rounded-md bg-slate-100 px-3 py-1.5 text-xs text-slate-600 transition-colors hover:bg-slate-200"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="rounded-md bg-amber-600 px-4 py-1.5 text-xs font-semibold text-slate-950 transition-colors hover:bg-amber-500"
+                  className="rounded-md bg-amber-600 px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-amber-500"
                 >
                   Confirm anchor
                 </button>

@@ -69,32 +69,32 @@ export default function EvaluationPage() {
   ];
 
   return (
-    <div className="h-full overflow-y-auto bg-[#090d16] p-6 text-foreground">
+    <div className="h-full overflow-y-auto bg-transparent p-6 text-foreground">
       <div className="mx-auto max-w-6xl space-y-6">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
         <div className="flex items-center gap-3">
           <div>
-            <h1 className="text-xl font-bold text-white flex items-center gap-2">
+            <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
               <Award className="h-6 w-6 text-primary" />
               Scientific Evaluation &amp; Ground Truth Benchmark
             </h1>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 mt-0.5">
               Metrics are recomputed in real time from the hidden news backbone and the
               current replay state. No hardcoded statistics.
             </p>
           </div>
         </div>
 
-        <div className="rounded bg-slate-900 border border-slate-800 px-3 py-1 font-mono text-xs text-slate-400">
+        <div className="rounded bg-white border border-slate-200 px-3 py-1 font-mono text-xs text-slate-500">
           {extraction.validatedCount} / {extraction.totalReports} reports ·{" "}
           {merging.trueIncidentCount} true backbone groups
         </div>
       </div>
 
       {/* Honest Disclaimer Banner */}
-      <div className="rounded-lg border border-sky-800/60 bg-sky-950/30 p-3 text-xs text-sky-200 flex items-start gap-2.5">
-        <Info className="h-4 w-4 text-sky-400 shrink-0 mt-0.5" />
+      <div className="rounded-lg border border-sky-200/60 bg-sky-50/30 p-3 text-xs text-sky-700 flex items-start gap-2.5">
+        <Info className="h-4 w-4 text-sky-500 shrink-0 mt-0.5" />
         <p className="leading-relaxed">
           <b>Historical replay, not a live validation:</b> {scenario.name} replays
           22 August – 7 September 2022, the real window of the Bengaluru floods, using
@@ -107,11 +107,11 @@ export default function EvaluationPage() {
 
       {/* Summary KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="rounded-xl border border-border bg-slate-900/60 p-4 space-y-1">
-          <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-            <Percent className="h-4 w-4 text-emerald-400" /> Extraction Accuracy
+        <div className="rounded-xl border border-border bg-white p-4 space-y-1">
+          <span className="text-xs font-semibold text-slate-500 flex items-center gap-1.5">
+            <Percent className="h-4 w-4 text-emerald-500" /> Extraction Accuracy
           </span>
-          <p className="text-3xl font-black text-emerald-400 font-mono">
+          <p className="text-3xl font-black text-emerald-500 font-mono">
             {extraction.accuracyPercent}%
           </p>
           <p className="text-[11px] text-slate-500">
@@ -119,11 +119,11 @@ export default function EvaluationPage() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-slate-900/60 p-4 space-y-1">
-          <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-            <GitMerge className="h-4 w-4 text-blue-400" /> Merging F1 Score
+        <div className="rounded-xl border border-border bg-white p-4 space-y-1">
+          <span className="text-xs font-semibold text-slate-500 flex items-center gap-1.5">
+            <GitMerge className="h-4 w-4 text-blue-500" /> Merging F1 Score
           </span>
-          <p className="text-3xl font-black text-blue-400 font-mono">
+          <p className="text-3xl font-black text-blue-500 font-mono">
             {merging.f1Score.toFixed(2)}
           </p>
           <p className="text-[11px] text-slate-500">
@@ -131,8 +131,8 @@ export default function EvaluationPage() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-slate-900/60 p-4 space-y-1">
-          <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+        <div className="rounded-xl border border-border bg-white p-4 space-y-1">
+          <span className="text-xs font-semibold text-slate-500 flex items-center gap-1.5">
             <BarChart3 className="h-4 w-4 text-primary" /> Top-5 Priority Overlap
           </span>
           <p className="text-3xl font-black text-primary font-mono">
@@ -144,11 +144,11 @@ export default function EvaluationPage() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-slate-900/60 p-4 space-y-1">
-          <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-            <ShieldAlert className="h-4 w-4 text-purple-400" /> Silent Zone Detection
+        <div className="rounded-xl border border-border bg-white p-4 space-y-1">
+          <span className="text-xs font-semibold text-slate-500 flex items-center gap-1.5">
+            <ShieldAlert className="h-4 w-4 text-purple-500" /> Silent Zone Detection
           </span>
-          <p className="text-3xl font-black text-purple-400 font-mono">
+          <p className="text-3xl font-black text-purple-500 font-mono">
             {equity.detectionRatePercent}%
           </p>
           <p className="text-[11px] text-slate-500">
@@ -164,10 +164,10 @@ export default function EvaluationPage() {
 
       {/* Equity summary strip */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="rounded-xl border border-border bg-slate-900/40 p-4 flex items-center gap-3">
-          <Clock className="h-5 w-5 text-purple-400 shrink-0" />
+        <div className="rounded-xl border border-border bg-white p-4 flex items-center gap-3">
+          <Clock className="h-5 w-5 text-purple-500 shrink-0" />
           <div>
-            <p className="font-mono text-lg font-bold text-white">
+            <p className="font-mono text-lg font-bold text-slate-900">
               {equity.silenceLeadTimeHours !== 0
                 ? `${equity.silenceLeadTimeHours > 0 ? "+" : ""}${equity.silenceLeadTimeHours.toFixed(1)} h`
                 : "0.0 h"}
@@ -181,10 +181,10 @@ export default function EvaluationPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-slate-900/40 p-4 flex items-center gap-3">
-          <MapPinned className="h-5 w-5 text-emerald-400 shrink-0" />
+        <div className="rounded-xl border border-border bg-white p-4 flex items-center gap-3">
+          <MapPinned className="h-5 w-5 text-emerald-500 shrink-0" />
           <div>
-            <p className="font-mono text-lg font-bold text-white">
+            <p className="font-mono text-lg font-bold text-slate-900">
               {equity.districtOverlapPercent}%
             </p>
             <p className="text-[11px] text-slate-500">
@@ -193,10 +193,10 @@ export default function EvaluationPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-slate-900/40 p-4 flex items-center gap-3">
-          <Recycle className="h-5 w-5 text-amber-400 shrink-0" />
+        <div className="rounded-xl border border-border bg-white p-4 flex items-center gap-3">
+          <Recycle className="h-5 w-5 text-amber-500 shrink-0" />
           <div>
-            <p className="font-mono text-lg font-bold text-white">
+            <p className="font-mono text-lg font-bold text-slate-900">
               {merging.recycledDuplicatesDetected}
             </p>
             <p className="text-[11px] text-slate-500">
@@ -209,21 +209,21 @@ export default function EvaluationPage() {
       {/* 2-Column Detailed Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Module 1: Extraction Breakdown */}
-        <div className="rounded-xl border border-border bg-slate-900/40 p-5 space-y-4">
-          <h3 className="font-bold text-white text-sm flex items-center gap-2">
-            <Percent className="h-4 w-4 text-emerald-400" /> Field Extraction Breakdown
+        <div className="rounded-xl border border-border bg-white p-5 space-y-4">
+          <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
+            <Percent className="h-4 w-4 text-emerald-500" /> Field Extraction Breakdown
           </h3>
 
           <div className="space-y-3">
             {Object.entries(extraction.fieldAccuracy).map(([field, score]) => (
               <div key={field} className="space-y-1">
                 <div className="flex justify-between text-xs font-mono">
-                  <span className="capitalize text-slate-300">
+                  <span className="capitalize text-slate-600">
                     {field.replace(/_/g, " ")}
                   </span>
-                  <span className="text-emerald-400 font-bold">{score}%</span>
+                  <span className="text-emerald-500 font-bold">{score}%</span>
                 </div>
-                <div className="h-2 w-full rounded-full bg-slate-800 overflow-hidden">
+                <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
                   <div
                     style={{ width: `${score}%` }}
                     className="h-full bg-emerald-500 rounded-full"
@@ -233,8 +233,8 @@ export default function EvaluationPage() {
             ))}
           </div>
 
-          <div className="rounded bg-slate-950 p-3 text-xs text-slate-400 border border-slate-800 space-y-1">
-            <p className="font-semibold text-slate-300">Design Guardrail Enforced:</p>
+          <div className="rounded bg-slate-50 p-3 text-xs text-slate-500 border border-slate-200 space-y-1">
+            <p className="font-semibold text-slate-600">Design Guardrail Enforced:</p>
             <p>
               Fields not present in the raw report are strictly labelled
               &quot;Unknown&quot;. Every extracted field keeps a character-span evidence
@@ -245,9 +245,9 @@ export default function EvaluationPage() {
         </div>
 
         {/* Module 2: Duplicate Merging case verification */}
-        <div className="rounded-xl border border-border bg-slate-900/40 p-5 space-y-4">
-          <h3 className="font-bold text-white text-sm flex items-center gap-2">
-            <GitMerge className="h-4 w-4 text-blue-400" /> Merge &amp; Safety Case
+        <div className="rounded-xl border border-border bg-white p-5 space-y-4">
+          <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
+            <GitMerge className="h-4 w-4 text-blue-500" /> Merge &amp; Safety Case
             Verification
           </h3>
 
@@ -257,23 +257,23 @@ export default function EvaluationPage() {
                 key={testCase.key}
                 className={`rounded border p-3 flex items-start gap-2.5 ${
                   testCase.passed
-                    ? "border-emerald-900/60 bg-emerald-950/20"
-                    : "border-rose-900/60 bg-rose-950/20"
+                    ? "border-emerald-200 bg-emerald-50"
+                    : "border-rose-200 bg-rose-50"
                 }`}
               >
                 {testCase.passed ? (
-                  <CheckCircle className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
                 ) : (
-                  <XCircle className="h-4 w-4 text-rose-400 shrink-0 mt-0.5" />
+                  <XCircle className="h-4 w-4 text-rose-500 shrink-0 mt-0.5" />
                 )}
                 <div>
-                  <p className="font-bold text-white">{testCase.title}</p>
-                  <p className="text-slate-400 text-[11px] mt-0.5">
+                  <p className="font-bold text-slate-900">{testCase.title}</p>
+                  <p className="text-slate-500 text-[11px] mt-0.5">
                     {testCase.description}
                   </p>
                   <p
                     className={`mt-1 font-mono text-[10px] font-bold ${
-                      testCase.passed ? "text-emerald-400" : "text-rose-400"
+                      testCase.passed ? "text-emerald-500" : "text-rose-500"
                     }`}
                   >
                     {testCase.passed ? "PASSED IN CURRENT REPLAY" : "NOT YET SATISFIED"}
@@ -286,8 +286,8 @@ export default function EvaluationPage() {
       </div>
 
       {/* Module 3: Ranking Quality vs Baselines */}
-      <div className="rounded-xl border border-border bg-slate-900/40 p-5 space-y-4">
-        <h3 className="font-bold text-white text-sm flex items-center gap-2">
+      <div className="rounded-xl border border-border bg-white p-5 space-y-4">
+        <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
           <Scale className="h-4 w-4 text-primary" /> Ranking Quality Comparison
           Against Baselines
         </h3>
@@ -295,7 +295,7 @@ export default function EvaluationPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse">
             <thead>
-              <tr className="border-b border-slate-800 text-slate-400 font-mono text-[11px]">
+              <tr className="border-b border-slate-200 text-slate-500 font-mono text-[11px]">
                 <th className="py-2.5 px-3">Ranking Algorithm</th>
                 <th className="py-2.5 px-3">Top-5 Priority Overlap</th>
                 <th className="py-2.5 px-3">NDCG @ 10</th>
@@ -303,14 +303,14 @@ export default function EvaluationPage() {
                 <th className="py-2.5 px-3">Kogilu Equity Incident Rank</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/80 font-mono text-xs">
+            <tbody className="divide-y divide-slate-100/80 font-mono text-xs">
               {rankings.map((row) => (
                 <tr
                   key={row.name}
                   className={
                     row.highlight
-                      ? "bg-primary/10 text-white font-bold"
-                      : "text-slate-300"
+                      ? "bg-primary/10 text-slate-900 font-bold"
+                      : "text-slate-600"
                   }
                 >
                   <td
@@ -335,33 +335,33 @@ export default function EvaluationPage() {
           </table>
         </div>
 
-        <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded border border-slate-800">
+        <p className="text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded border border-slate-200">
           <b>Takeaway for judges:</b> {ranking.equityStory}
         </p>
       </div>
 
       {/* Module 4: Equity Check (Silence Layer) */}
-      <div className="rounded-xl border border-border bg-slate-900/40 p-5 space-y-4">
-        <h3 className="font-bold text-white text-sm flex items-center gap-2">
-          <ShieldAlert className="h-4 w-4 text-purple-400" /> Equity Check: Silence Layer
+      <div className="rounded-xl border border-border bg-white p-5 space-y-4">
+        <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
+          <ShieldAlert className="h-4 w-4 text-purple-500" /> Equity Check: Silence Layer
           Detection of Underserved Zones
         </h3>
 
         {equity.silentZonesDetails.length === 0 ? (
-          <div className="rounded-lg border border-slate-800 bg-slate-950 p-6 text-center text-slate-500 text-xs">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-center text-slate-500 text-xs">
             No zone has crossed the silence threshold at the current replay time. Play
-            forward or jump to Case (b)/(c) to inspect an active alert.
+            forward in the replay to inspect an active alert.
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {equity.silentZonesDetails.map((sz) => (
               <div
                 key={sz.wardId}
-                className="rounded-lg border border-purple-900/50 bg-slate-950 p-3.5 space-y-2 text-xs"
+                className="rounded-lg border border-purple-200 bg-slate-50 p-3.5 space-y-2 text-xs"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-white">{sz.wardName}</span>
-                  <span className="font-mono text-purple-300 font-bold">
+                  <span className="font-bold text-slate-900">{sz.wardName}</span>
+                  <span className="font-mono text-purple-600 font-bold">
                     Score: {sz.silenceScore.toFixed(2)}
                   </span>
                 </div>
@@ -370,8 +370,8 @@ export default function EvaluationPage() {
                   <span
                     className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
                       sz.flagged
-                        ? "bg-purple-950 text-purple-300 border border-purple-700"
-                        : "bg-slate-800 text-slate-400"
+                        ? "bg-purple-50 text-purple-600 border border-purple-200"
+                        : "bg-slate-100 text-slate-500"
                     }`}
                   >
                     {sz.flagged ? "✓ DETECTED AS SILENT NEED" : "Pending Detection"}
@@ -380,8 +380,8 @@ export default function EvaluationPage() {
                     <span
                       className={`rounded px-1.5 py-0.5 text-[10px] font-mono ${
                         sz.leadTimeHours >= 0
-                          ? "bg-emerald-950 text-emerald-300 border border-emerald-800"
-                          : "bg-amber-950 text-amber-300 border border-amber-800"
+                          ? "bg-emerald-50 text-emerald-600 border border-emerald-200"
+                          : "bg-amber-50 text-amber-600 border border-amber-200"
                       }`}
                     >
                       {sz.leadTimeHours >= 0
@@ -395,7 +395,7 @@ export default function EvaluationPage() {
                   Onset: {sz.onsetTime ? new Date(sz.onsetTime).toLocaleString() : "—"}
                 </div>
 
-                <ul className="text-[11px] text-slate-400 space-y-1 pt-1 border-t border-slate-900">
+                <ul className="text-[11px] text-slate-500 space-y-1 pt-1 border-t border-slate-200">
                   {sz.reasons.slice(0, 2).map((reason, index) => (
                     <li key={index}>• {reason}</li>
                   ))}
@@ -407,28 +407,28 @@ export default function EvaluationPage() {
       </div>
 
       {/* Backbone reference */}
-      <div className="rounded-xl border border-border bg-slate-900/40 p-5 space-y-3">
-        <h3 className="font-bold text-white text-sm flex items-center gap-2">
-          <Award className="h-4 w-4 text-amber-400" /> Active Replay Snapshot
+      <div className="rounded-xl border border-border bg-white p-5 space-y-3">
+        <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
+          <Award className="h-4 w-4 text-amber-500" /> Active Replay Snapshot
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs font-mono">
-          <div className="rounded bg-slate-950 border border-slate-800 p-3">
+          <div className="rounded bg-slate-50 border border-slate-200 p-3">
             <p className="text-slate-500 text-[10px]">Incidents formed</p>
-            <p className="text-white text-lg font-bold">{incidents.length}</p>
+            <p className="text-slate-900 text-lg font-bold">{incidents.length}</p>
           </div>
-          <div className="rounded bg-slate-950 border border-slate-800 p-3">
+          <div className="rounded bg-slate-50 border border-slate-200 p-3">
             <p className="text-slate-500 text-[10px]">Reports available</p>
-            <p className="text-white text-lg font-bold">{extraction.totalReports}</p>
+            <p className="text-slate-900 text-lg font-bold">{extraction.totalReports}</p>
           </div>
-          <div className="rounded bg-slate-950 border border-slate-800 p-3">
+          <div className="rounded bg-slate-50 border border-slate-200 p-3">
             <p className="text-slate-500 text-[10px]">Silent zones flagged</p>
-            <p className="text-white text-lg font-bold">
+            <p className="text-slate-900 text-lg font-bold">
               {equity.silentZonesDetectedCount}
             </p>
           </div>
-          <div className="rounded bg-slate-950 border border-slate-800 p-3">
+          <div className="rounded bg-slate-50 border border-slate-200 p-3">
             <p className="text-slate-500 text-[10px]">True groups</p>
-            <p className="text-white text-lg font-bold">{merging.trueIncidentCount}</p>
+            <p className="text-slate-900 text-lg font-bold">{merging.trueIncidentCount}</p>
           </div>
         </div>
         <p className="text-[11px] text-slate-500">

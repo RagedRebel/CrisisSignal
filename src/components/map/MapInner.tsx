@@ -43,8 +43,7 @@ export function MapInner() {
       maxZoom: 17,
     });
 
-    // Key-free OpenStreetMap raster tiles, darkened with a CSS filter (see
-    // globals.css) to match the control-room theme. No API key is required.
+    // Key-free OpenStreetMap raster tiles. No API key is required.
     const tileLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution:
@@ -72,7 +71,7 @@ export function MapInner() {
           [lat, 77.2],
           [lat, 78.2],
         ],
-        { color: "#1e293b", weight: 1, opacity: 0.55, interactive: false }
+        { color: "#cbd5e1", weight: 1, opacity: 0.7, interactive: false }
       ).addTo(graticule);
     }
     for (let lng = 77.2; lng <= 78.2; lng += 0.2) {
@@ -81,7 +80,7 @@ export function MapInner() {
           [12.6, lng],
           [13.4, lng],
         ],
-        { color: "#1e293b", weight: 1, opacity: 0.55, interactive: false }
+        { color: "#cbd5e1", weight: 1, opacity: 0.7, interactive: false }
       ).addTo(graticule);
     }
 
@@ -147,9 +146,9 @@ export function MapInner() {
         const isFlagged = ward.is_flagged_silent;
         const score = ward.silence_score;
 
-        let fillColor = "#1e293b";
-        let fillOpacity = 0.2;
-        let borderColor = "#334155";
+        let fillColor = "#cbd5e1";
+        let fillOpacity = 0.18;
+        let borderColor = "#94a3b8";
         let borderWeight = 1;
 
         if (isFlagged) {
@@ -171,8 +170,8 @@ export function MapInner() {
 
         const tooltipContent = `
           <div style="font-size: 11px; padding: 2px;">
-            <b style="color: #38bdf8;">${ward.name} (${ward.code})</b><br/>
-            Silence Score: <b style="color: ${isFlagged ? '#e879f9' : '#94a3b8'};">${score.toFixed(2)}</b> ${
+            <b style="color: #0284c7;">${ward.name} (${ward.code})</b><br/>
+            Silence Score: <b style="color: ${isFlagged ? '#a21caf' : '#475569'};">${score.toFixed(2)}</b> ${
           isFlagged ? "⚠️ POSSIBLE UNREPORTED NEED" : ""
         }<br/>
             Reports: ${ward.actual_reports_count} of ${ward.expected_reports_count} expected<br/>
@@ -204,7 +203,7 @@ export function MapInner() {
       if (showUncertaintyCircles && inc.location.uncertainty_radius_m > 30) {
         const circle = L.circle([lat, lng], {
           radius: inc.location.uncertainty_radius_m,
-          color: isUrgentVerify ? "#ef4444" : isSelected ? "#38bdf8" : "#f59e0b",
+          color: isUrgentVerify ? "#dc2626" : isSelected ? "#0284c7" : "#d97706",
           fillColor: isUrgentVerify ? "#ef4444" : "#f59e0b",
           fillOpacity: isSelected ? 0.25 : 0.12,
           weight: 1.5,
@@ -237,8 +236,8 @@ export function MapInner() {
           color: white;
           font-weight: 800;
           font-size: 11px;
-          border: 2px solid ${isSelected ? "#ffffff" : "#0f172a"};
-          box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+          border: 2px solid #ffffff;
+          box-shadow: ${isSelected ? "0 0 0 3px rgba(2,132,199,0.35), 0 4px 10px rgba(15,23,42,0.28)" : "0 3px 8px rgba(15,23,42,0.25)"};
           cursor: pointer;
         ">
           #${inc.priority_rank}
@@ -266,17 +265,17 @@ export function MapInner() {
 
       marker.bindPopup(`
         <div style="font-family: inherit; font-size: 12px; max-width: 240px; padding: 2px;">
-          <div style="font-weight: bold; color: #38bdf8; margin-bottom: 4px;">#${inc.priority_rank} ${inc.title}</div>
+          <div style="font-weight: bold; color: #0284c7; margin-bottom: 4px;">#${inc.priority_rank} ${inc.title}</div>
           <div>Urgency: <b>${scorePercent}%</b> | Reliability: <b>${inc.reliability_score}/100</b></div>
-          <div style="color: #94a3b8; font-size: 11px; margin-top: 4px;">Merged from ${inc.source_report_ids.length} reports</div>
+          <div style="color: #64748b; font-size: 11px; margin-top: 4px;">Merged from ${inc.source_report_ids.length} reports</div>
           ${
             isUrgentVerify
-              ? `<div style="color: #ef4444; font-weight: bold; margin-top: 4px;">⚠️ VERIFY URGENTLY</div>`
+              ? `<div style="color: #dc2626; font-weight: bold; margin-top: 4px;">⚠️ VERIFY URGENTLY</div>`
               : ""
           }
           ${
             inc.fairness_boost_applied
-              ? `<div style="color: #a855f7; font-weight: bold; margin-top: 2px;">★ Fairness Boost Applied</div>`
+              ? `<div style="color: #7e22ce; font-weight: bold; margin-top: 2px;">★ Fairness Boost Applied</div>`
               : ""
           }
         </div>
@@ -310,63 +309,72 @@ export function MapInner() {
   };
 
   return (
-    <div className="relative h-full w-full min-w-0 bg-[#0b1120]">
+    <div className="relative h-full w-full min-w-0 bg-white">
       {/* Leaflet map container */}
       <div ref={mapContainerRef} className="h-full w-full min-w-[300px]" />
 
       {/* Layer Controls Bar (Top Center) */}
-      <div className="absolute left-1/2 top-3 z-[1000] -translate-x-1/2 rounded-lg border border-slate-800 bg-[#0b1120]/90 px-2.5 py-1.5 text-[10px] shadow-lg backdrop-blur">
+      <div className="absolute left-1/2 top-3 z-[1000] -translate-x-1/2 rounded-lg border border-slate-200 bg-white/95 px-2.5 py-1.5 text-[10px] shadow-md backdrop-blur">
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1 font-medium text-slate-500">
-            <Layers className="h-3 w-3" /> Layers
+            <Layers className="h-3 w-3" /> <span className="hidden xl:inline">Layers</span>
           </span>
 
-          <label className="flex cursor-pointer items-center gap-1.5 text-slate-400 transition-colors hover:text-slate-200">
+          <label
+            title="Silence zones"
+            className="flex cursor-pointer items-center gap-1.5 text-slate-600 transition-colors hover:text-slate-900"
+          >
             <input
               type="checkbox"
               checked={showSilenceLayer}
               onChange={(e) => setShowSilenceLayer(e.target.checked)}
-              className="h-3 w-3 rounded border-slate-700 accent-purple-500"
+              className="h-3 w-3 rounded border-slate-300 accent-purple-500"
             />
             <span className="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
-            Silence zones
+            <span className="hidden xl:inline">Silence zones</span>
           </label>
 
-          <label className="flex cursor-pointer items-center gap-1.5 text-slate-400 transition-colors hover:text-slate-200">
+          <label
+            title="Uncertainty circles"
+            className="flex cursor-pointer items-center gap-1.5 text-slate-600 transition-colors hover:text-slate-900"
+          >
             <input
               type="checkbox"
               checked={showUncertaintyCircles}
               onChange={(e) => setShowUncertaintyCircles(e.target.checked)}
-              className="h-3 w-3 rounded border-slate-700 accent-amber-500"
+              className="h-3 w-3 rounded border-slate-300 accent-amber-500"
             />
             <span className="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
-            Uncertainty
+            <span className="hidden xl:inline">Uncertainty</span>
           </label>
 
-          <label className="flex cursor-pointer items-center gap-1.5 text-slate-400 transition-colors hover:text-slate-200">
+          <label
+            title="Stormwater valleys"
+            className="flex cursor-pointer items-center gap-1.5 text-slate-600 transition-colors hover:text-slate-900"
+          >
             <input
               type="checkbox"
               checked={showRiver}
               onChange={(e) => setShowRiver(e.target.checked)}
-              className="h-3 w-3 rounded border-slate-700 accent-sky-500"
+              className="h-3 w-3 rounded border-slate-300 accent-sky-500"
             />
             <span className="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
-            Valleys
+            <span className="hidden xl:inline">Valleys</span>
           </label>
 
-          <span className="h-3.5 w-px bg-slate-800" />
+          <span className="h-3.5 w-px bg-slate-200" />
 
           <button
             onClick={() => mapInstanceRef.current?.zoomIn()}
             title="Zoom in"
-            className="rounded p-0.5 text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
+            className="rounded p-0.5 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
           >
             <ZoomIn className="h-3.5 w-3.5" />
           </button>
           <button
             onClick={() => mapInstanceRef.current?.zoomOut()}
             title="Zoom out"
-            className="rounded p-0.5 text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
+            className="rounded p-0.5 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
           >
             <ZoomOut className="h-3.5 w-3.5" />
           </button>
@@ -374,7 +382,7 @@ export function MapInner() {
       </div>
 
       {/* Basemap attribution / offline fallback notice */}
-      <div className="absolute bottom-1 left-1/2 z-[1000] -translate-x-1/2 whitespace-nowrap rounded px-2 py-0.5 text-[9px] text-slate-600 backdrop-blur-sm">
+      <div className="absolute bottom-1 left-1/2 z-[1000] -translate-x-1/2 whitespace-nowrap rounded bg-white/70 px-2 py-0.5 text-[9px] text-slate-500 backdrop-blur-sm">
         {tilesUnavailable ? (
           <>Streets unavailable — schematic base · district polygons &amp; rivers</>
         ) : (
@@ -384,7 +392,7 @@ export function MapInner() {
               href="https://www.openstreetmap.org/copyright"
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-slate-700 underline-offset-2 hover:text-slate-400"
+              className="underline decoration-slate-300 underline-offset-2 hover:text-slate-800"
             >
               OpenStreetMap
             </a>{" "}
@@ -394,19 +402,19 @@ export function MapInner() {
       </div>
 
       {/* Legend Badge (Bottom Center) */}
-      <div className="absolute bottom-7 left-1/2 z-[1000] -translate-x-1/2 rounded-md border border-slate-800 bg-[#0b1120]/90 px-2.5 py-1 text-[10px] shadow-lg backdrop-blur">
+      <div className="absolute bottom-7 left-1/2 z-[1000] -translate-x-1/2 rounded-md border border-slate-200 bg-white/95 px-2.5 py-1 text-[10px] shadow-md backdrop-blur">
         <div className="flex items-center gap-3">
           <span className="font-medium text-slate-500">Priority</span>
-          <span className="flex items-center gap-1 text-slate-400">
+          <span className="flex items-center gap-1 text-slate-500">
             <span className="h-2 w-2 rounded-full bg-red-500"></span> #1–2
           </span>
-          <span className="flex items-center gap-1 text-slate-400">
+          <span className="flex items-center gap-1 text-slate-500">
             <span className="h-2 w-2 rounded-full bg-orange-500"></span> #3–5
           </span>
-          <span className="flex items-center gap-1 text-slate-400">
+          <span className="flex items-center gap-1 text-slate-500">
             <span className="h-2 w-2 rounded-full bg-yellow-500"></span> #6–8
           </span>
-          <span className="flex items-center gap-1 text-slate-400">
+          <span className="flex items-center gap-1 text-slate-500">
             <span className="h-2 w-2 rounded-full bg-blue-500"></span> Lower
           </span>
         </div>
@@ -414,37 +422,37 @@ export function MapInner() {
 
       {/* Assign Welfare Check Modal for Flagged Silent Zone */}
       {selectedWardForCheck && activeWard && (
-        <div className="absolute inset-0 z-[1200] flex items-center justify-center bg-black/70 p-4">
-          <div className="w-full max-w-md rounded-xl border border-purple-500/50 bg-[#0f172a] p-5 shadow-2xl">
-            <div className="flex items-center gap-2 text-purple-400 mb-2 font-bold text-sm">
-              <ShieldAlert className="h-5 w-5 text-purple-400" />
+        <div className="absolute inset-0 z-[1200] flex items-center justify-center bg-slate-900/30 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-xl border border-purple-200 bg-white p-5 shadow-2xl">
+            <div className="mb-2 flex items-center gap-2 text-sm font-bold text-purple-700">
+              <ShieldAlert className="h-5 w-5 text-purple-500" />
               <span>Silence Layer Flag: {activeWard.name}</span>
             </div>
 
-            <div className="rounded bg-purple-950/40 border border-purple-900/60 p-2.5 text-xs text-purple-200 mb-3 space-y-1">
+            <div className="rounded bg-purple-50 border border-purple-200 p-2.5 text-xs text-purple-700 mb-3 space-y-1">
               <p className="font-semibold">
                 Silence Score: {activeWard.silence_score.toFixed(2)} (Threshold: 0.60)
               </p>
-              <ul className="list-disc pl-4 space-y-0.5 text-[11px] text-purple-300/90">
+              <ul className="list-disc pl-4 space-y-0.5 text-[11px] text-purple-600/90">
                 {activeWard.silence_reasons.map((r, i) => (
                   <li key={i}>{r}</li>
                 ))}
               </ul>
             </div>
 
-            <p className="text-[11px] text-slate-400 italic mb-4">
+            <p className="text-[11px] text-slate-500 italic mb-4">
               &quot;Prompt for human attention, not a claim that people are in danger. Silent zones never auto-convert into incidents.&quot;
             </p>
 
             <form onSubmit={handleWelfareCheckSubmit} className="space-y-3">
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-slate-600 mb-1">
                   Assign Welfare Check Method
                 </label>
                 <select
                   value={checkActionType}
                   onChange={(e) => setCheckActionType(e.target.value as any)}
-                  className="w-full rounded bg-slate-900 border border-slate-700 px-3 py-1.5 text-xs text-white"
+                  className="w-full rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-900 focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-100"
                 >
                   <option value="boat_patrol">SDRF Flood Rescue Boat Patrol</option>
                   <option value="drone_recon">Emergency Drone / Satellite Reconnaissance</option>
@@ -453,7 +461,7 @@ export function MapInner() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-slate-600 mb-1">
                   Instructions / Dispatch Notes
                 </label>
                 <textarea
@@ -461,15 +469,15 @@ export function MapInner() {
                   onChange={(e) => setCheckNotes(e.target.value)}
                   placeholder="e.g. Check lower embankment old age clusters; test for power blackout..."
                   rows={2}
-                  className="w-full rounded bg-slate-900 border border-slate-700 p-2 text-xs text-white"
+                  className="w-full rounded-md border border-slate-200 bg-white p-2 text-xs text-slate-900 placeholder-slate-400 focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-100"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-2 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-2 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setSelectedWardForCheck(null)}
-                  className="rounded bg-slate-800 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-700"
+                  className="rounded bg-slate-100 px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-200"
                 >
                   Dismiss
                 </button>

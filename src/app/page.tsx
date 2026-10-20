@@ -24,7 +24,7 @@ export default function DashboardPage() {
   }, []);
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-[#090d16]">
+    <div className="relative h-full w-full overflow-hidden bg-transparent">
       {/* Full-bleed tactical map */}
       <div className="absolute inset-0 isolate">
         <MapView />
@@ -35,7 +35,7 @@ export default function DashboardPage() {
 
       {/* Slide-over decision panel */}
       {selectedIncidentId && detailOpen && (
-        <aside className="absolute inset-y-0 right-0 z-30 w-[390px] max-w-[92vw] border-l border-slate-800/80 bg-[#0b1120]/95 shadow-2xl backdrop-blur-xl">
+        <aside className="absolute inset-y-0 right-0 z-30 w-[390px] max-w-[92vw] border-l border-slate-200 bg-white shadow-2xl">
           <DetailPanel onClose={() => setDetailOpen(false)} />
         </aside>
       )}
@@ -45,7 +45,7 @@ export default function DashboardPage() {
         <button
           onClick={() => setDetailOpen(true)}
           title="Open incident details"
-          className="absolute right-0 top-1/2 z-20 flex -translate-y-1/2 items-center gap-1 rounded-l-md border border-r-0 border-slate-700 bg-[#0b1120]/95 px-1.5 py-3 text-[10px] text-slate-400 shadow-lg backdrop-blur transition-colors hover:text-white"
+          className="absolute right-0 top-1/2 z-20 flex -translate-y-1/2 items-center gap-1 rounded-l-md border border-r-0 border-slate-300 bg-white/95 px-1.5 py-3 text-[10px] text-slate-500 shadow-lg backdrop-blur transition-colors hover:text-slate-900"
         >
           <ChevronLeft className="h-3.5 w-3.5" />
           <span className="[writing-mode:vertical-rl]">Details</span>
