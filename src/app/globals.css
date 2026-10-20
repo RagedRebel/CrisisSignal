@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #090d16;
+    --foreground: #f1f5f9;
+    --card: #0f172a;
+    --card-foreground: #f8fafc;
+    --border: #1e293b;
+    --primary: #38bdf8;
+    --primary-foreground: #0284c7;
+    --secondary: #1e293b;
+    --secondary-foreground: #94a3b8;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --accent: #334155;
+    --accent-foreground: #f8fafc;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbars for control room density */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Evidence span highlight styles */
+.highlight-evidence {
+  background-color: rgba(56, 189, 248, 0.2);
+  border-bottom: 2px solid #38bdf8;
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.highlight-evidence:hover {
+  background-color: rgba(56, 189, 248, 0.35);
+}
+
+/* Leaflet Map overrides for dark control room */
+.leaflet-container {
+  background: #0b1120 !important;
+  font-family: inherit !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0f172a !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7) !important;
+  border-radius: 8px !important;
+}
+
+.leaflet-popup-tip {
+  background: #0f172a !important;
+}

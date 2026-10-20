@@ -1,0 +1,865 @@
+[
+  {
+    "id": "lm-cen-cubbon",
+    "name": "Cubbon Park East Gate",
+    "aliases": [
+      "Cubbon Park Gate",
+      "Cubbon Park"
+    ],
+    "type": "admin",
+    "zone_id": "zone-central",
+    "district": "Central Bengaluru",
+    "location": {
+      "lat": 12.976,
+      "lng": 77.6
+    }
+  },
+  {
+    "id": "lm-cen-mgroad",
+    "name": "MG Road Metro Station",
+    "aliases": [
+      "MG Road Metro",
+      "MG Road"
+    ],
+    "type": "transit",
+    "zone_id": "zone-central",
+    "district": "Central Bengaluru",
+    "location": {
+      "lat": 12.9756,
+      "lng": 77.6064
+    }
+  },
+  {
+    "id": "lm-cen-krcircle",
+    "name": "K R Circle Bus Stand",
+    "aliases": [
+      "KR Circle",
+      "K.R. Circle"
+    ],
+    "type": "transit",
+    "zone_id": "zone-central",
+    "district": "Central Bengaluru",
+    "location": {
+      "lat": 12.976,
+      "lng": 77.593
+    }
+  },
+  {
+    "id": "lm-cen-shivajinagar",
+    "name": "Shivajinagar Market",
+    "aliases": [
+      "Shivajinagar"
+    ],
+    "type": "market",
+    "zone_id": "zone-central",
+    "district": "Central Bengaluru",
+    "location": {
+      "lat": 12.985,
+      "lng": 77.605
+    }
+  },
+  {
+    "id": "lm-cen-bowring",
+    "name": "Bowring Hospital",
+    "aliases": [
+      "Bowring and Lady Curzon Hospital",
+      "Bowring"
+    ],
+    "type": "hospital",
+    "zone_id": "zone-central",
+    "district": "Central Bengaluru",
+    "location": {
+      "lat": 12.982,
+      "lng": 77.601
+    }
+  },
+  {
+    "id": "lm-ind-domlur",
+    "name": "Domlur Flyover",
+    "aliases": [
+      "Domlur Bridge"
+    ],
+    "type": "highway",
+    "zone_id": "zone-indiranagar",
+    "district": "East Bengaluru",
+    "location": {
+      "lat": 12.961,
+      "lng": 77.638
+    }
+  },
+  {
+    "id": "lm-ind-cmh",
+    "name": "CMH Road Junction",
+    "aliases": [
+      "CMH Road"
+    ],
+    "type": "market",
+    "zone_id": "zone-indiranagar",
+    "district": "East Bengaluru",
+    "location": {
+      "lat": 12.978,
+      "lng": 77.638
+    }
+  },
+  {
+    "id": "lm-ind-100ft",
+    "name": "100 Feet Road Indiranagar",
+    "aliases": [
+      "100 Feet Road",
+      "Indiranagar 100 Feet Road"
+    ],
+    "type": "highway",
+    "zone_id": "zone-indiranagar",
+    "district": "East Bengaluru",
+    "location": {
+      "lat": 12.971,
+      "lng": 77.641
+    }
+  },
+  {
+    "id": "lm-ind-esi",
+    "name": "ESI Hospital Indiranagar",
+    "aliases": [
+      "ESI Hospital"
+    ],
+    "type": "hospital",
+    "zone_id": "zone-indiranagar",
+    "district": "East Bengaluru",
+    "location": {
+      "lat": 12.977,
+      "lng": 77.647
+    }
+  },
+  {
+    "id": "lm-ind-hal",
+    "name": "HAL Airport Road Underpass",
+    "aliases": [
+      "HAL Underpass"
+    ],
+    "type": "infrastructure",
+    "zone_id": "zone-indiranagar",
+    "district": "East Bengaluru",
+    "location": {
+      "lat": 12.96,
+      "lng": 77.653
+    }
+  },
+  {
+    "id": "lm-kor-ejipura",
+    "name": "Ejipura Junction Underpass",
+    "aliases": [
+      "Ejipura Junction",
+      "Ejipura Underpass",
+      "Ejipura"
+    ],
+    "type": "infrastructure",
+    "zone_id": "zone-koramangala",
+    "district": "South East Bengaluru",
+    "location": {
+      "lat": 12.934,
+      "lng": 77.623
+    }
+  },
+  {
+    "id": "lm-kor-jnc",
+    "name": "Koramangala JNC",
+    "aliases": [
+      "Koramangala Junction",
+      "Koramangala Jn"
+    ],
+    "type": "transit",
+    "zone_id": "zone-koramangala",
+    "district": "South East Bengaluru",
+    "location": {
+      "lat": 12.9348,
+      "lng": 77.6245
+    }
+  },
+  {
+    "id": "lm-kor-sony",
+    "name": "Sony World Signal",
+    "aliases": [
+      "Sony World Junction"
+    ],
+    "type": "transit",
+    "zone_id": "zone-koramangala",
+    "district": "South East Bengaluru",
+    "location": {
+      "lat": 12.9355,
+      "lng": 77.6265
+    }
+  },
+  {
+    "id": "lm-kor-forum",
+    "name": "Forum Mall Koramangala",
+    "aliases": [
+      "Forum Mall"
+    ],
+    "type": "commercial",
+    "zone_id": "zone-koramangala",
+    "district": "South East Bengaluru",
+    "location": {
+      "lat": 12.934,
+      "lng": 77.612
+    }
+  },
+  {
+    "id": "lm-kor-stjohns",
+    "name": "St John's Hospital Koramangala",
+    "aliases": [
+      "St John's Hospital"
+    ],
+    "type": "hospital",
+    "zone_id": "zone-koramangala",
+    "district": "South East Bengaluru",
+    "location": {
+      "lat": 12.93,
+      "lng": 77.618
+    }
+  },
+  {
+    "id": "lm-slk-silk",
+    "name": "Silk Board Junction",
+    "aliases": [
+      "Silk Board",
+      "Central Silk Board"
+    ],
+    "type": "transit",
+    "zone_id": "zone-silkboard",
+    "district": "Bommanahalli",
+    "location": {
+      "lat": 12.9175,
+      "lng": 77.622
+    }
+  },
+  {
+    "id": "lm-slk-hsr",
+    "name": "HSR Layout Sector 2",
+    "aliases": [
+      "HSR Layout"
+    ],
+    "type": "residential",
+    "zone_id": "zone-silkboard",
+    "district": "Bommanahalli",
+    "location": {
+      "lat": 12.912,
+      "lng": 77.641
+    }
+  },
+  {
+    "id": "lm-slk-btm",
+    "name": "BTM Layout 2nd Stage",
+    "aliases": [
+      "BTM Layout",
+      "BTM 2nd Stage"
+    ],
+    "type": "residential",
+    "zone_id": "zone-silkboard",
+    "district": "Bommanahalli",
+    "location": {
+      "lat": 12.916,
+      "lng": 77.61
+    }
+  },
+  {
+    "id": "lm-slk-madiwala",
+    "name": "Madiwala Lake Bund",
+    "aliases": [
+      "Madiwala Lake"
+    ],
+    "type": "embankment",
+    "zone_id": "zone-silkboard",
+    "district": "Bommanahalli",
+    "location": {
+      "lat": 12.921,
+      "lng": 77.617
+    }
+  },
+  {
+    "id": "lm-slk-depot",
+    "name": "Bommanahalli Bus Depot",
+    "aliases": [
+      "Bommanahalli Depot"
+    ],
+    "type": "transit",
+    "zone_id": "zone-silkboard",
+    "district": "Bommanahalli",
+    "location": {
+      "lat": 12.908,
+      "lng": 77.62
+    }
+  },
+  {
+    "id": "lm-jay-4block",
+    "name": "Jayanagar 4th Block Market",
+    "aliases": [
+      "Jayanagar 4th Block",
+      "Jayanagar Market"
+    ],
+    "type": "market",
+    "zone_id": "zone-jayanagar",
+    "district": "South Bengaluru",
+    "location": {
+      "lat": 12.925,
+      "lng": 77.583
+    }
+  },
+  {
+    "id": "lm-jay-southend",
+    "name": "South End Circle",
+    "aliases": [
+      "South End"
+    ],
+    "type": "transit",
+    "zone_id": "zone-jayanagar",
+    "district": "South Bengaluru",
+    "location": {
+      "lat": 12.925,
+      "lng": 77.573
+    }
+  },
+  {
+    "id": "lm-jay-tilak",
+    "name": "Tilak Nagar Main Road",
+    "aliases": [
+      "Tilak Nagar"
+    ],
+    "type": "highway",
+    "zone_id": "zone-jayanagar",
+    "district": "South Bengaluru",
+    "location": {
+      "lat": 12.93,
+      "lng": 77.59
+    }
+  },
+  {
+    "id": "lm-jay-hospital",
+    "name": "Jayanagar General Hospital",
+    "aliases": [
+      "Jayanagar Hospital"
+    ],
+    "type": "hospital",
+    "zone_id": "zone-jayanagar",
+    "district": "South Bengaluru",
+    "location": {
+      "lat": 12.928,
+      "lng": 77.579
+    }
+  },
+  {
+    "id": "lm-jay-jp6",
+    "name": "JP Nagar 6th Phase Park",
+    "aliases": [
+      "JP Nagar 6th Phase",
+      "JP Nagar Park"
+    ],
+    "type": "residential",
+    "zone_id": "zone-jayanagar",
+    "district": "South Bengaluru",
+    "location": {
+      "lat": 12.906,
+      "lng": 77.585
+    }
+  },
+  {
+    "id": "lm-wes-vrish",
+    "name": "Vrishabhavathi River Bridge",
+    "aliases": [
+      "Vrishabhavathi Bridge",
+      "Vrishabhavathi"
+    ],
+    "type": "bridge",
+    "zone_id": "zone-west",
+    "district": "West Bengaluru",
+    "location": {
+      "lat": 12.938,
+      "lng": 77.515
+    }
+  },
+  {
+    "id": "lm-wes-rrarch",
+    "name": "RR Nagar Arch",
+    "aliases": [
+      "Rajarajeshwari Nagar Arch",
+      "RR Nagar"
+    ],
+    "type": "transit",
+    "zone_id": "zone-west",
+    "district": "West Bengaluru",
+    "location": {
+      "lat": 12.926,
+      "lng": 77.519
+    }
+  },
+  {
+    "id": "lm-wes-bda",
+    "name": "Banashankari BDA Complex",
+    "aliases": [
+      "BDA Complex Banashankari",
+      "Banashankari BDA"
+    ],
+    "type": "market",
+    "zone_id": "zone-west",
+    "district": "West Bengaluru",
+    "location": {
+      "lat": 12.925,
+      "lng": 77.546
+    }
+  },
+  {
+    "id": "lm-wes-nayandahalli",
+    "name": "Nayandahalli Junction",
+    "aliases": [
+      "Nayandahalli"
+    ],
+    "type": "transit",
+    "zone_id": "zone-west",
+    "district": "West Bengaluru",
+    "location": {
+      "lat": 12.945,
+      "lng": 77.527
+    }
+  },
+  {
+    "id": "lm-wes-rrmch",
+    "name": "Rajarajeshwari Medical College Hospital",
+    "aliases": [
+      "RR Medical College Hospital"
+    ],
+    "type": "hospital",
+    "zone_id": "zone-west",
+    "district": "West Bengaluru",
+    "location": {
+      "lat": 12.902,
+      "lng": 77.512
+    }
+  },
+  {
+    "id": "lm-heb-flyover",
+    "name": "Hebbal Flyover",
+    "aliases": [
+      "Hebbal Bridge"
+    ],
+    "type": "highway",
+    "zone_id": "zone-hebbal",
+    "district": "North Bengaluru",
+    "location": {
+      "lat": 13.035,
+      "lng": 77.59
+    }
+  },
+  {
+    "id": "lm-heb-lake",
+    "name": "Hebbal Lake Bund",
+    "aliases": [
+      "Hebbal Lake",
+      "Hebbal Lake Viewpoint"
+    ],
+    "type": "embankment",
+    "zone_id": "zone-hebbal",
+    "district": "North Bengaluru",
+    "location": {
+      "lat": 13.045,
+      "lng": 77.591
+    }
+  },
+  {
+    "id": "lm-heb-kempapura",
+    "name": "Kempapura Main Road",
+    "aliases": [
+      "Kempapura Road"
+    ],
+    "type": "highway",
+    "zone_id": "zone-hebbal",
+    "district": "North Bengaluru",
+    "location": {
+      "lat": 13.038,
+      "lng": 77.596
+    }
+  },
+  {
+    "id": "lm-heb-substation",
+    "name": "Kempapura Substation",
+    "aliases": [
+      "Kempapura Power Substation"
+    ],
+    "type": "industrial",
+    "zone_id": "zone-hebbal",
+    "district": "North Bengaluru",
+    "location": {
+      "lat": 13.038,
+      "lng": 77.598
+    }
+  },
+  {
+    "id": "lm-heb-nagawara",
+    "name": "Nagawara Junction",
+    "aliases": [
+      "Nagawara"
+    ],
+    "type": "transit",
+    "zone_id": "zone-hebbal",
+    "district": "North Bengaluru",
+    "location": {
+      "lat": 13.022,
+      "lng": 77.621
+    }
+  },
+  {
+    "id": "lm-yel-kogilu",
+    "name": "Kogilu Cross",
+    "aliases": [
+      "Kogilu Junction"
+    ],
+    "type": "transit",
+    "zone_id": "zone-yelahanka",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.095,
+      "lng": 77.594
+    }
+  },
+  {
+    "id": "lm-yel-busstand",
+    "name": "Yelahanka New Town Bus Stand",
+    "aliases": [
+      "Yelahanka Bus Stand",
+      "Yelahanka New Town"
+    ],
+    "type": "transit",
+    "zone_id": "zone-yelahanka",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.1,
+      "lng": 77.596
+    }
+  },
+  {
+    "id": "lm-yel-alla",
+    "name": "Allalasandra Lake Bund",
+    "aliases": [
+      "Allalasandra Lake"
+    ],
+    "type": "embankment",
+    "zone_id": "zone-yelahanka",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.093,
+      "lng": 77.587
+    }
+  },
+  {
+    "id": "lm-yel-hosp",
+    "name": "Yelahanka Government Hospital",
+    "aliases": [
+      "Yelahanka Hospital"
+    ],
+    "type": "hospital",
+    "zone_id": "zone-yelahanka",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.1,
+      "lng": 77.589
+    }
+  },
+  {
+    "id": "lm-yel-layout",
+    "name": "Kogilu Layout Main Road",
+    "aliases": [
+      "Kogilu Layout"
+    ],
+    "type": "residential",
+    "zone_id": "zone-yelahanka",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.097,
+      "lng": 77.597
+    }
+  },
+  {
+    "id": "lm-orr-ecospace",
+    "name": "Ecospace Business Park",
+    "aliases": [
+      "Ecospace",
+      "Ecospace Tech Park"
+    ],
+    "type": "commercial",
+    "zone_id": "zone-orr",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.9305,
+      "lng": 77.689
+    }
+  },
+  {
+    "id": "lm-orr-kadubeesanahalli",
+    "name": "Kadubeesanahalli Junction",
+    "aliases": [
+      "Kadubeesanahalli",
+      "Kadubeesanahalli Signal"
+    ],
+    "type": "transit",
+    "zone_id": "zone-orr",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.935,
+      "lng": 77.6835
+    }
+  },
+  {
+    "id": "lm-orr-devara",
+    "name": "Devarabeesanahalli Lake Bund",
+    "aliases": [
+      "Devarabeesanahalli Lake"
+    ],
+    "type": "embankment",
+    "zone_id": "zone-orr",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.937,
+      "lng": 77.686
+    }
+  },
+  {
+    "id": "lm-orr-embassy",
+    "name": "Embassy Tech Village Gate",
+    "aliases": [
+      "Embassy Tech Village"
+    ],
+    "type": "commercial",
+    "zone_id": "zone-orr",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.934,
+      "lng": 77.691
+    }
+  },
+  {
+    "id": "lm-orr-marathahalli",
+    "name": "Marathahalli Bridge",
+    "aliases": [
+      "Marathahalli"
+    ],
+    "type": "bridge",
+    "zone_id": "zone-orr",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.956,
+      "lng": 77.698
+    }
+  },
+  {
+    "id": "lm-bel-gate",
+    "name": "Bellandur Lake Gate",
+    "aliases": [
+      "Bellandur Lake Gate",
+      "Bellandur Lake"
+    ],
+    "type": "embankment",
+    "zone_id": "zone-bellandur",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.941,
+      "lng": 77.665
+    }
+  },
+  {
+    "id": "lm-bel-rainbow",
+    "name": "Rainbow Drive Layout",
+    "aliases": [
+      "Rainbow Drive"
+    ],
+    "type": "residential",
+    "zone_id": "zone-bellandur",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.918,
+      "lng": 77.657
+    }
+  },
+  {
+    "id": "lm-bel-yemalur",
+    "name": "Yemalur Main Road",
+    "aliases": [
+      "Yemalur"
+    ],
+    "type": "highway",
+    "zone_id": "zone-bellandur",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.936,
+      "lng": 77.671
+    }
+  },
+  {
+    "id": "lm-bel-petrol",
+    "name": "Bellandur Petrol Bunk Junction",
+    "aliases": [
+      "Bellandur Junction"
+    ],
+    "type": "transit",
+    "zone_id": "zone-bellandur",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.93,
+      "lng": 77.661
+    }
+  },
+  {
+    "id": "lm-bel-varthurweir",
+    "name": "Varthur Weir Road",
+    "aliases": [
+      "Varthur Weir"
+    ],
+    "type": "highway",
+    "zone_id": "zone-bellandur",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.933,
+      "lng": 77.673
+    }
+  },
+  {
+    "id": "lm-whf-itpl",
+    "name": "ITPL Main Gate",
+    "aliases": [
+      "ITPL",
+      "ITPL Gate"
+    ],
+    "type": "commercial",
+    "zone_id": "zone-whitefield",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.986,
+      "lng": 77.736
+    }
+  },
+  {
+    "id": "lm-whf-hopefarm",
+    "name": "Hope Farm Junction",
+    "aliases": [
+      "Hope Farm"
+    ],
+    "type": "transit",
+    "zone_id": "zone-whitefield",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.976,
+      "lng": 77.748
+    }
+  },
+  {
+    "id": "lm-whf-hoodi",
+    "name": "Hoodi Circle",
+    "aliases": [
+      "Hoodi"
+    ],
+    "type": "transit",
+    "zone_id": "zone-whitefield",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.991,
+      "lng": 77.716
+    }
+  },
+  {
+    "id": "lm-whf-community",
+    "name": "Whitefield Community Hall",
+    "aliases": [
+      "Whitefield Relief Camp",
+      "Whitefield Community Centre"
+    ],
+    "type": "relief_camp",
+    "zone_id": "zone-whitefield",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.978,
+      "lng": 77.748
+    }
+  },
+  {
+    "id": "lm-whf-varthurkodi",
+    "name": "Varthur Road Kodi",
+    "aliases": [
+      "Varthur Kodi"
+    ],
+    "type": "highway",
+    "zone_id": "zone-whitefield",
+    "district": "Mahadevapura",
+    "location": {
+      "lat": 12.969,
+      "lng": 77.727
+    }
+  },
+  {
+    "id": "lm-nor-culvert",
+    "name": "Kogilu-Thanisandra Culvert",
+    "aliases": [
+      "Kogilu-Thanisandra Culvert",
+      "Thanisandra Culvert"
+    ],
+    "type": "bridge",
+    "zone_id": "zone-north",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.0705,
+      "lng": 77.6355
+    }
+  },
+  {
+    "id": "lm-nor-mainroad",
+    "name": "Thanisandra Main Road",
+    "aliases": [
+      "Thanisandra"
+    ],
+    "type": "highway",
+    "zone_id": "zone-north",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.0712,
+      "lng": 77.6368
+    }
+  },
+  {
+    "id": "lm-nor-jakkur",
+    "name": "Jakkur Aerodrome",
+    "aliases": [
+      "Jakkur Airport"
+    ],
+    "type": "transit",
+    "zone_id": "zone-north",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.078,
+      "lng": 77.607
+    }
+  },
+  {
+    "id": "lm-nor-jakkurlake",
+    "name": "Jakkur Lake Bund",
+    "aliases": [
+      "Jakkur Lake"
+    ],
+    "type": "embankment",
+    "zone_id": "zone-north",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.075,
+      "lng": 77.642
+    }
+  },
+  {
+    "id": "lm-nor-school",
+    "name": "Thanisandra Government School",
+    "aliases": [
+      "Thanisandra School"
+    ],
+    "type": "school",
+    "zone_id": "zone-north",
+    "district": "Yelahanka",
+    "location": {
+      "lat": 13.068,
+      "lng": 77.63
+    }
+  }
+]

@@ -1,0 +1,313 @@
+{
+  "scenario_title": "Bengaluru Flood Replay (22 August – 7 September 2022)",
+  "backbone_true_events": [
+    {
+      "id": "bb-001",
+      "event_at": "2022-08-30T04:30:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "Mahadevapura",
+        "sub_location": "Kadubeesanahalli / Ecospace ORR",
+        "lat": 12.933,
+        "lng": 77.686
+      },
+      "event_type": "flood_surge",
+      "people_affected": {
+        "min": 180,
+        "max": 400
+      },
+      "deaths": "Unknown",
+      "villages_affected": 9,
+      "access_status": "cut_off",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "ORR service roads between Ecospace and Kadubeesanahalli were under water on 30 Aug; commuters were stranded for hours while two-wheelers stalled in ankle-to-knee water."
+    },
+    {
+      "id": "bb-002",
+      "event_at": "2022-08-31T06:00:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "Mahadevapura",
+        "sub_location": "Rainbow Drive Layout, Bellandur",
+        "lat": 12.918,
+        "lng": 77.657
+      },
+      "event_type": "rescue",
+      "people_affected": {
+        "min": 60,
+        "max": 120
+      },
+      "deaths": 1,
+      "villages_affected": "Unknown",
+      "access_status": "ok",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "Basements at Rainbow Drive Layout flooded overnight on 31 Aug; residents were evacuated and a protest over delayed pumping was logged."
+    },
+    {
+      "id": "bb-003",
+      "event_at": "2022-08-31T09:30:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "Mahadevapura",
+        "sub_location": "Bellandur Lake Gate / Yemalur",
+        "lat": 12.941,
+        "lng": 77.665
+      },
+      "event_type": "breach",
+      "people_affected": {
+        "min": 150,
+        "max": 300
+      },
+      "deaths": "Unknown",
+      "villages_affected": 6,
+      "access_status": "boat_only",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "Bellandur lake gate overflow entered Yemalur low-lying streets on 31 Aug, flooding homes to chest depth and cutting the approach road."
+    },
+    {
+      "id": "bb-004",
+      "event_at": "2022-09-01T05:00:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "West Bengaluru",
+        "sub_location": "Vrishabhavathi river, RR Nagar",
+        "lat": 12.938,
+        "lng": 77.515
+      },
+      "event_type": "flood_surge",
+      "people_affected": {
+        "min": 200,
+        "max": 450
+      },
+      "deaths": "Unknown",
+      "villages_affected": 11,
+      "access_status": "cut_off",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "The Vrishabhavathi overflowed at RR Nagar and Nayandahalli on 1 Sep; riverside colonies were cut off and homes flooded to waist depth."
+    },
+    {
+      "id": "bb-005",
+      "event_at": "2022-09-02T08:00:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "South East Bengaluru",
+        "sub_location": "Ejipura Junction / Koramangala JNC",
+        "lat": 12.934,
+        "lng": 77.623
+      },
+      "event_type": "flood_surge",
+      "people_affected": {
+        "min": 80,
+        "max": 160
+      },
+      "deaths": "Unknown",
+      "villages_affected": 4,
+      "access_status": "cut_off",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "The Ejipura junction underpass filled within minutes on 2 Sep and commuters raised near-identical alarms across calls, SMS and social posts."
+    },
+    {
+      "id": "bb-006",
+      "event_at": "2022-09-03T04:45:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "Yelahanka",
+        "sub_location": "Kogilu Cross, Yelahanka",
+        "lat": 13.095,
+        "lng": 77.594
+      },
+      "event_type": "flood_surge",
+      "people_affected": {
+        "min": 220,
+        "max": 500
+      },
+      "deaths": "Unknown",
+      "villages_affected": 7,
+      "access_status": "cut_off",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "Kogilu Cross low-income layouts flooded on 3 Sep after a storm drain choked; very few messages reached the control room despite severe need."
+    },
+    {
+      "id": "bb-007",
+      "event_at": "2022-09-03T09:00:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "Bommanahalli",
+        "sub_location": "Silk Board Junction",
+        "lat": 12.9175,
+        "lng": 77.622
+      },
+      "event_type": "flood_surge",
+      "people_affected": {
+        "min": 120,
+        "max": 260
+      },
+      "deaths": "Unknown",
+      "villages_affected": 3,
+      "access_status": "ok",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "Silk Board junction was gridlocked on 3 Sep with knee-deep water around the flyover piers; two-wheelers were abandoned on the median."
+    },
+    {
+      "id": "bb-008",
+      "event_at": "2022-09-04T05:30:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "Yelahanka",
+        "sub_location": "Kogilu-Thanisandra Culvert, Jakkur",
+        "lat": 13.0705,
+        "lng": 77.6355
+      },
+      "event_type": "bridge_failure",
+      "people_affected": {
+        "min": 90,
+        "max": 200
+      },
+      "deaths": "Unknown",
+      "villages_affected": 5,
+      "access_status": "cut_off",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "The Kogilu-Thanisandra culvert collapsed early on 4 Sep; the Jakkur wetland overflowed and the only all-weather road link was severed."
+    },
+    {
+      "id": "bb-009",
+      "event_at": "2022-09-04T12:00:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "North Bengaluru",
+        "sub_location": "Hebbal Lake / Kempapura",
+        "lat": 13.045,
+        "lng": 77.591
+      },
+      "event_type": "flood_surge",
+      "people_affected": {
+        "min": 140,
+        "max": 320
+      },
+      "deaths": "Unknown",
+      "villages_affected": 5,
+      "access_status": "boat_only",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "The Hebbal lake bund seeped on 4 Sep and Kempapura streets flooded; a transformer sparking in the water forced a local shutdown."
+    },
+    {
+      "id": "bb-010",
+      "event_at": "2022-09-05T06:00:00Z",
+      "event_at_precision": "hour",
+      "location": {
+        "district": "Mahadevapura",
+        "sub_location": "Whitefield / Varthur Road",
+        "lat": 12.978,
+        "lng": 77.748
+      },
+      "event_type": "relief_camp",
+      "people_affected": {
+        "min": 300,
+        "max": 600
+      },
+      "deaths": 0,
+      "villages_affected": 2,
+      "access_status": "ok",
+      "outlet": "Simulated control-room log",
+      "url": "",
+      "evidence_phrase": "A relief camp opened at Whitefield Community Hall on 5 Sep for families displaced from Varthur Road low-lying blocks."
+    }
+  ],
+  "benchmark_cases": {
+    "case_a": {
+      "backbone_id": "bb-001",
+      "zone_id": "zone-orr",
+      "zone_name": "ORR IT Corridor (Bellandur–Kadubeesanahalli)"
+    },
+    "case_b": {
+      "backbone_id": "bb-006",
+      "zone_id": "zone-yelahanka",
+      "zone_name": "Yelahanka–Kogilu"
+    },
+    "case_c": {
+      "backbone_id": "bb-008",
+      "zone_id": "zone-north",
+      "zone_name": "Thanisandra–Jakkur"
+    },
+    "case_d": {
+      "backbone_id": "bb-005",
+      "zone_id": "zone-koramangala",
+      "zone_name": "Koramangala–Ejipura"
+    },
+    "case_e": {
+      "backbone_id": "bb-009",
+      "zone_id": "zone-hebbal",
+      "zone_name": "Hebbal–Kempapura"
+    },
+    "case_f": {
+      "backbone_id": "bb-001",
+      "zone_id": "zone-central",
+      "zone_name": "Central Bengaluru (MG Road–Shivajinagar)"
+    }
+  },
+  "official_worst_hit_districts": [
+    {
+      "district": "Mahadevapura",
+      "peak_affected": 320000,
+      "rank": 1,
+      "note": "ORR, Bellandur and Whitefield corridors flooded across multiple days"
+    },
+    {
+      "district": "West Bengaluru",
+      "peak_affected": 180000,
+      "rank": 2,
+      "note": "Vrishabhavathi valley overflow and riverbank colony inundation"
+    },
+    {
+      "district": "Yelahanka",
+      "peak_affected": 165000,
+      "rank": 3,
+      "note": "Kogilu and Thanisandra layouts flooded; culvert collapse severed road access"
+    },
+    {
+      "district": "Bommanahalli",
+      "peak_affected": 120000,
+      "rank": 4,
+      "note": "Silk Board and Madiwala outflow ponding"
+    },
+    {
+      "district": "North Bengaluru",
+      "peak_affected": 110000,
+      "rank": 5,
+      "note": "Hebbal lake bund seepage and Kempapura substation shutdown"
+    },
+    {
+      "district": "South East Bengaluru",
+      "peak_affected": 95000,
+      "rank": 6,
+      "note": "Ejipura underpass and Koramangala valley flooding"
+    }
+  ],
+  "silent_zones": [
+    {
+      "zone_id": "zone-yelahanka",
+      "district": "Yelahanka",
+      "onset_time": "2022-09-03T04:45:00Z",
+      "reason": "Kogilu low-income layouts generated very few reports despite waist-deep flooding, jammed storm drains and a thin volunteer network.",
+      "expected_silence_score": 0.68,
+      "failure_mode": "storm_drain_overflow_low_connectivity"
+    },
+    {
+      "zone_id": "zone-north",
+      "district": "Yelahanka",
+      "onset_time": "2022-09-04T05:30:00Z",
+      "reason": "The Jakkur culvert collapse severed road access, fibre and tower power; the zone went quiet after the first distress calls.",
+      "expected_silence_score": 0.85,
+      "failure_mode": "culvert_collapse_telecom_blackout"
+    }
+  ]
+}

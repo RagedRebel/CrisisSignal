@@ -1,0 +1,452 @@
+[
+  {
+    "id": "zone-central",
+    "name": "Central Bengaluru (MG Road–Shivajinagar)",
+    "district": "Central Bengaluru",
+    "code": "BLR-CEN",
+    "population": 480000,
+    "area_sq_km": 32,
+    "center": {
+      "lat": 12.975,
+      "lng": 77.6
+    },
+    "polygon": [
+      {
+        "lat": 12.995,
+        "lng": 77.575
+      },
+      {
+        "lat": 13,
+        "lng": 77.625
+      },
+      {
+        "lat": 12.955,
+        "lng": 77.63
+      },
+      {
+        "lat": 12.95,
+        "lng": 77.58
+      }
+    ],
+    "vulnerability_index": 0.55,
+    "base_connectivity": 0.92,
+    "connectivity_overrides": [],
+    "population_density": 15000,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Wetland and drain network close to the CBD; service roads pond quickly but connectivity is high."
+  },
+  {
+    "id": "zone-indiranagar",
+    "name": "Indiranagar–Domlur",
+    "district": "East Bengaluru",
+    "code": "BLR-EAS",
+    "population": 520000,
+    "area_sq_km": 36,
+    "center": {
+      "lat": 12.97,
+      "lng": 77.64
+    },
+    "polygon": [
+      {
+        "lat": 12.995,
+        "lng": 77.62
+      },
+      {
+        "lat": 13,
+        "lng": 77.665
+      },
+      {
+        "lat": 12.945,
+        "lng": 77.67
+      },
+      {
+        "lat": 12.94,
+        "lng": 77.625
+      }
+    ],
+    "vulnerability_index": 0.26,
+    "base_connectivity": 0.9,
+    "connectivity_overrides": [],
+    "population_density": 14400,
+    "has_hospital": true,
+    "has_relief_camp": false,
+    "notes": "Old stormwater drains along the airport road corridor; underpasses back up during cloudbursts. Well-connected, low social vulnerability."
+  },
+  {
+    "id": "zone-koramangala",
+    "name": "Koramangala–Ejipura",
+    "district": "South East Bengaluru",
+    "code": "BLR-KOR",
+    "population": 610000,
+    "area_sq_km": 40,
+    "center": {
+      "lat": 12.934,
+      "lng": 77.624
+    },
+    "polygon": [
+      {
+        "lat": 12.955,
+        "lng": 77.6
+      },
+      {
+        "lat": 12.96,
+        "lng": 77.645
+      },
+      {
+        "lat": 12.915,
+        "lng": 77.65
+      },
+      {
+        "lat": 12.91,
+        "lng": 77.605
+      }
+    ],
+    "vulnerability_index": 0.68,
+    "base_connectivity": 0.85,
+    "connectivity_overrides": [],
+    "population_density": 15250,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Dense mixed-use valley; the Ejipura junction underpass is a known ponding choke point."
+  },
+  {
+    "id": "zone-silkboard",
+    "name": "Silk Board–HSR–BTM",
+    "district": "Bommanahalli",
+    "code": "BLR-SLK",
+    "population": 780000,
+    "area_sq_km": 52,
+    "center": {
+      "lat": 12.912,
+      "lng": 77.622
+    },
+    "polygon": [
+      {
+        "lat": 12.935,
+        "lng": 77.6
+      },
+      {
+        "lat": 12.94,
+        "lng": 77.65
+      },
+      {
+        "lat": 12.89,
+        "lng": 77.655
+      },
+      {
+        "lat": 12.885,
+        "lng": 77.605
+      }
+    ],
+    "vulnerability_index": 0.76,
+    "base_connectivity": 0.8,
+    "connectivity_overrides": [],
+    "population_density": 15000,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Junction flooding around Silk Board and Madiwala lake outflow; heavy commuter exposure."
+  },
+  {
+    "id": "zone-jayanagar",
+    "name": "Jayanagar–JP Nagar",
+    "district": "South Bengaluru",
+    "code": "BLR-JAY",
+    "population": 690000,
+    "area_sq_km": 44,
+    "center": {
+      "lat": 12.925,
+      "lng": 77.583
+    },
+    "polygon": [
+      {
+        "lat": 12.945,
+        "lng": 77.555
+      },
+      {
+        "lat": 12.95,
+        "lng": 77.6
+      },
+      {
+        "lat": 12.905,
+        "lng": 77.605
+      },
+      {
+        "lat": 12.9,
+        "lng": 77.56
+      }
+    ],
+    "vulnerability_index": 0.24,
+    "base_connectivity": 0.86,
+    "connectivity_overrides": [],
+    "population_density": 15700,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Planned layouts with aging stormwater lines; localised knee-deep ponding on arterial roads. Low social vulnerability and strong reporting culture."
+  },
+  {
+    "id": "zone-west",
+    "name": "RR Nagar–Vrishabhavathi Valley",
+    "district": "West Bengaluru",
+    "code": "BLR-WES",
+    "population": 850000,
+    "area_sq_km": 58,
+    "center": {
+      "lat": 12.94,
+      "lng": 77.52
+    },
+    "polygon": [
+      {
+        "lat": 12.97,
+        "lng": 77.48
+      },
+      {
+        "lat": 12.975,
+        "lng": 77.545
+      },
+      {
+        "lat": 12.91,
+        "lng": 77.55
+      },
+      {
+        "lat": 12.905,
+        "lng": 77.485
+      }
+    ],
+    "vulnerability_index": 0.82,
+    "base_connectivity": 0.72,
+    "connectivity_overrides": [],
+    "population_density": 14650,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Vrishabhavathi river corridor receives sewage-mixed stormwater; riverbank colonies flood first."
+  },
+  {
+    "id": "zone-hebbal",
+    "name": "Hebbal–Kempapura",
+    "district": "North Bengaluru",
+    "code": "BLR-HEB",
+    "population": 540000,
+    "area_sq_km": 38,
+    "center": {
+      "lat": 13.035,
+      "lng": 77.59
+    },
+    "polygon": [
+      {
+        "lat": 13.065,
+        "lng": 77.56
+      },
+      {
+        "lat": 13.07,
+        "lng": 77.62
+      },
+      {
+        "lat": 13.01,
+        "lng": 77.625
+      },
+      {
+        "lat": 13.005,
+        "lng": 77.565
+      }
+    ],
+    "vulnerability_index": 0.72,
+    "base_connectivity": 0.82,
+    "connectivity_overrides": [],
+    "population_density": 14200,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Hebbal lake and valley drains pass under the flyover; Kempapura has a distribution substation in the floodplain."
+  },
+  {
+    "id": "zone-yelahanka",
+    "name": "Yelahanka–Kogilu",
+    "district": "Yelahanka",
+    "code": "BLR-YEL",
+    "population": 390000,
+    "area_sq_km": 42,
+    "center": {
+      "lat": 13.095,
+      "lng": 77.59
+    },
+    "polygon": [
+      {
+        "lat": 13.125,
+        "lng": 77.555
+      },
+      {
+        "lat": 13.13,
+        "lng": 77.62
+      },
+      {
+        "lat": 13.07,
+        "lng": 77.625
+      },
+      {
+        "lat": 13.065,
+        "lng": 77.56
+      }
+    ],
+    "vulnerability_index": 0.88,
+    "base_connectivity": 0.3,
+    "connectivity_overrides": [],
+    "population_density": 9300,
+    "has_hospital": true,
+    "has_relief_camp": false,
+    "notes": "Kogilu low-income layouts and informal storm drains; chronic coverage deficit and thin volunteer network."
+  },
+  {
+    "id": "zone-orr",
+    "name": "ORR IT Corridor (Bellandur–Kadubeesanahalli)",
+    "district": "Mahadevapura",
+    "code": "BLR-ORR",
+    "population": 720000,
+    "area_sq_km": 46,
+    "center": {
+      "lat": 12.933,
+      "lng": 77.69
+    },
+    "polygon": [
+      {
+        "lat": 12.965,
+        "lng": 77.675
+      },
+      {
+        "lat": 12.968,
+        "lng": 77.73
+      },
+      {
+        "lat": 12.91,
+        "lng": 77.735
+      },
+      {
+        "lat": 12.905,
+        "lng": 77.68
+      }
+    ],
+    "vulnerability_index": 0.74,
+    "base_connectivity": 0.88,
+    "connectivity_overrides": [],
+    "population_density": 15650,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "IT corridor with high report volume; service roads and tech-park basements flood quickly."
+  },
+  {
+    "id": "zone-bellandur",
+    "name": "Bellandur–Yemalur",
+    "district": "Mahadevapura",
+    "code": "BLR-BEL",
+    "population": 430000,
+    "area_sq_km": 34,
+    "center": {
+      "lat": 12.928,
+      "lng": 77.655
+    },
+    "polygon": [
+      {
+        "lat": 12.955,
+        "lng": 77.625
+      },
+      {
+        "lat": 12.958,
+        "lng": 77.67
+      },
+      {
+        "lat": 12.9,
+        "lng": 77.675
+      },
+      {
+        "lat": 12.895,
+        "lng": 77.63
+      }
+    ],
+    "vulnerability_index": 0.8,
+    "base_connectivity": 0.84,
+    "connectivity_overrides": [],
+    "population_density": 12650,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Downstream of Bellandur and Varthur lakes; gate operations and weir overflow drive rapid inundation."
+  },
+  {
+    "id": "zone-whitefield",
+    "name": "Whitefield–Varthur",
+    "district": "Mahadevapura",
+    "code": "BLR-WHF",
+    "population": 660000,
+    "area_sq_km": 54,
+    "center": {
+      "lat": 12.98,
+      "lng": 77.74
+    },
+    "polygon": [
+      {
+        "lat": 13.01,
+        "lng": 77.705
+      },
+      {
+        "lat": 13.015,
+        "lng": 77.775
+      },
+      {
+        "lat": 12.95,
+        "lng": 77.78
+      },
+      {
+        "lat": 12.945,
+        "lng": 77.71
+      }
+    ],
+    "vulnerability_index": 0.7,
+    "base_connectivity": 0.84,
+    "connectivity_overrides": [],
+    "population_density": 12200,
+    "has_hospital": true,
+    "has_relief_camp": true,
+    "notes": "Rapidly built-up plateau; Varthur lake spills towards the ITPL approach roads and camp grounds."
+  },
+  {
+    "id": "zone-north",
+    "name": "Thanisandra–Jakkur",
+    "district": "Yelahanka",
+    "code": "BLR-NOR",
+    "population": 430000,
+    "area_sq_km": 40,
+    "center": {
+      "lat": 13.07,
+      "lng": 77.64
+    },
+    "polygon": [
+      {
+        "lat": 13.1,
+        "lng": 77.61
+      },
+      {
+        "lat": 13.105,
+        "lng": 77.675
+      },
+      {
+        "lat": 13.045,
+        "lng": 77.68
+      },
+      {
+        "lat": 13.04,
+        "lng": 77.615
+      }
+    ],
+    "vulnerability_index": 0.82,
+    "base_connectivity": 0.55,
+    "connectivity_overrides": [
+      {
+        "after": "2022-09-04T05:00:00Z",
+        "new_value": 0.08,
+        "reason": "Jakkur culvert collapse severed the fibre backbone and the tower's diesel generator ran dry"
+      }
+    ],
+    "population_density": 10750,
+    "has_hospital": false,
+    "has_relief_camp": true,
+    "notes": "Wetland belt between Jakkur and Thanisandra; one culvert carries the only all-weather road link."
+  }
+]

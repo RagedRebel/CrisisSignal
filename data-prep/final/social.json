@@ -1,0 +1,170 @@
+[
+  {
+    "id": "soc-sim-01",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-08-30T05:05:00Z",
+    "sender_id": "x-blr-traffic-watch",
+    "raw_text": "ORR near Kadubeesanahalli is a river. Buses stuck for 40 minutes, people walking on the median. Avoid the service road! #BengaluruRains #ORR",
+    "source_type": "first_hand",
+    "district": "Mahadevapura",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 412,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 12.935,
+      "lng": 77.6835,
+      "name": "Kadubeesanahalli Junction"
+    },
+    "_gt_district": "Mahadevapura"
+  },
+  {
+    "id": "soc-sim-02",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-08-31T07:12:00Z",
+    "sender_id": "x-rainbow-resident",
+    "raw_text": "Rainbow Drive basement parking is fully flooded, pumps are not working since last night. Families on the ground floor are shifting upstairs. #Bellandur #BengaluruFloods",
+    "source_type": "first_hand",
+    "district": "Mahadevapura",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 866,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 12.918,
+      "lng": 77.657,
+      "name": "Rainbow Drive Layout"
+    },
+    "_gt_district": "Mahadevapura"
+  },
+  {
+    "id": "soc-sim-03",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-08-31T10:20:00Z",
+    "sender_id": "x-yemalur-voice",
+    "raw_text": "Bellandur lake gate overflow has reached Yemalur Main Road. Water is waist deep near the apartment gate. Please send boats for the elderly. #BengaluruFloods #SOS",
+    "source_type": "first_hand",
+    "district": "Mahadevapura",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 1204,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 12.936,
+      "lng": 77.671,
+      "name": "Yemalur Main Road"
+    },
+    "_gt_district": "Mahadevapura"
+  },
+  {
+    "id": "soc-sim-04",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-01T05:40:00Z",
+    "sender_id": "x-vrishabhavathi-watch",
+    "raw_text": "Vrishabhavathi is flowing over the bridge at RR Nagar side. The smell is unbearable and the colony road is cut off. #BengaluruFloods",
+    "source_type": "first_hand",
+    "district": "West Bengaluru",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 534,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 12.938,
+      "lng": 77.515,
+      "name": "Vrishabhavathi River Bridge"
+    },
+    "_gt_district": "West Bengaluru"
+  },
+  {
+    "id": "soc-sim-05",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-02T08:12:00Z",
+    "sender_id": "x-koramangala-rwa",
+    "raw_text": "Ejipura underpass is chest deep within ten minutes of rain. Two autos are stuck at the mouth. Police have closed the road. #BengaluruTraffic #Flood",
+    "source_type": "first_hand",
+    "district": "South East Bengaluru",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 723,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 12.934,
+      "lng": 77.623,
+      "name": "Ejipura Junction Underpass"
+    },
+    "_gt_district": "South East Bengaluru"
+  },
+  {
+    "id": "soc-sim-06",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-03T05:05:00Z",
+    "sender_id": "x-yelahanka-care",
+    "raw_text": "Kogilu Cross is underwater, the storm drain is choked with silt. Around 30 families are shifting to the school building. We need drinking water here. #Yelahanka #BengaluruFloods",
+    "source_type": "first_hand",
+    "district": "Yelahanka",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 198,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 13.095,
+      "lng": 77.594,
+      "name": "Kogilu Cross"
+    },
+    "_gt_district": "Yelahanka"
+  },
+  {
+    "id": "soc-sim-07",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-04T05:45:00Z",
+    "sender_id": "x-thanisandra-voice",
+    "raw_text": "The culvert near Jakkur is gone, entire road edge washed away. Thanisandra side has no power and no mobile signal. Nobody is able to reach us. #BengaluruFloods",
+    "source_type": "first_hand",
+    "district": "Yelahanka",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 312,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 13.0705,
+      "lng": 77.6355,
+      "name": "Kogilu-Thanisandra Culvert"
+    },
+    "_gt_district": "Yelahanka"
+  },
+  {
+    "id": "soc-sim-08",
+    "channel": "social",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-04T12:30:00Z",
+    "sender_id": "x-hebbal-lakeside",
+    "raw_text": "Hebbal lake bund is seeping near the walking track. Kempapura road has knee-deep water and the power was cut after a sparking transformer. #Hebbal #BengaluruFloods",
+    "source_type": "first_hand",
+    "district": "North Bengaluru",
+    "metadata": {
+      "call_duration_sec": null,
+      "social_likes": 447,
+      "is_second_hand": false
+    },
+    "location_hint": {
+      "lat": 13.045,
+      "lng": 77.591,
+      "name": "Hebbal Lake Bund"
+    },
+    "_gt_district": "North Bengaluru"
+  }
+]

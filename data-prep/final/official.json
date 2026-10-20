@@ -1,0 +1,209 @@
+[
+  {
+    "id": "off-001",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-08-30T05:30:00Z",
+    "sender_id": "bbmp-control-room",
+    "raw_text": "BBMP CONTROL ROOM BULLETIN: Heavy overnight rain has inundated the ORR service roads near Kadubeesanahalli and Ecospace. Stormwater pumping units and traffic marshals are deployed. Residents are advised to avoid underpasses until water recedes.",
+    "source_type": "official",
+    "district": "Mahadevapura",
+    "metadata": {
+      "source_org": "BBMP Control Room",
+      "affected_zones": 3,
+      "population_affected": 42000,
+      "relief_camps": 2,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 12.933,
+      "lng": 77.686,
+      "name": "ORR Control Point, Kadubeesanahalli"
+    },
+    "_gt_district": "Mahadevapura"
+  },
+  {
+    "id": "off-002",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-08-31T07:00:00Z",
+    "sender_id": "ksndmc",
+    "raw_text": "KSNDMC RAINFALL ADVISORY: Very heavy rain expected over North Bengaluru through the next 24 hours. Lake catchments at Hebbal, Jakkur and Yelahanka are rising. Citizens should avoid riverbank and lake bund roads.",
+    "source_type": "official",
+    "district": "North Bengaluru",
+    "metadata": {
+      "source_org": "KSNDMC",
+      "affected_zones": 4,
+      "population_affected": 68000,
+      "relief_camps": 0,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 13.035,
+      "lng": 77.59,
+      "name": "North Bengaluru rainfall grid"
+    },
+    "_gt_district": "North Bengaluru"
+  },
+  {
+    "id": "off-003",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-08-31T10:00:00Z",
+    "sender_id": "bbmp-control-room",
+    "raw_text": "BELLANDUR GATE ADVISORY: Lake gate operations are under way after the inflow crossed the weir. Low-lying homes in Yemalur, Bellandur and Rainbow Drive should shift valuables to upper floors. Rescue boats are on standby.",
+    "source_type": "official",
+    "district": "Mahadevapura",
+    "metadata": {
+      "source_org": "BBMP Control Room",
+      "affected_zones": 2,
+      "population_affected": 51000,
+      "relief_camps": 3,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 12.941,
+      "lng": 77.665,
+      "name": "Bellandur Lake Gate"
+    },
+    "_gt_district": "Mahadevapura"
+  },
+  {
+    "id": "off-004",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-01T06:00:00Z",
+    "sender_id": "bwssb",
+    "raw_text": "BWSSB VALLEY ADVISORY: Vrishabhavathi valley drains are carrying sewage-mixed stormwater after last night's rainfall. Riverbank roads at Nayandahalli and RR Nagar are unsafe. Avoid contact with the water.",
+    "source_type": "official",
+    "district": "West Bengaluru",
+    "metadata": {
+      "source_org": "BWSSB",
+      "affected_zones": 3,
+      "population_affected": 74000,
+      "relief_camps": 4,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 12.938,
+      "lng": 77.515,
+      "name": "Vrishabhavathi River Bridge"
+    },
+    "_gt_district": "West Bengaluru"
+  },
+  {
+    "id": "off-005",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-02T09:00:00Z",
+    "sender_id": "bbmp-control-room",
+    "raw_text": "TRAFFIC ADVISORY: The Ejipura junction underpass is flooded and closed. Traffic is diverted via Koramangala JNC and Sony World Signal. Do not enter the underpass on foot. Pumping has started.",
+    "source_type": "official",
+    "district": "South East Bengaluru",
+    "metadata": {
+      "source_org": "BBMP Control Room",
+      "affected_zones": 2,
+      "population_affected": 36000,
+      "relief_camps": 1,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 12.934,
+      "lng": 77.623,
+      "name": "Ejipura Junction"
+    },
+    "_gt_district": "South East Bengaluru"
+  },
+  {
+    "id": "off-006",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-03T05:30:00Z",
+    "sender_id": "sdrf-karnataka",
+    "raw_text": "SDRF DEPLOYMENT NOTE: Teams with inflatable boats have been positioned at Kogilu Cross after layouts were inundated. Residents of Kogilu Layout are advised to move to the higher ground near the Yelahanka New Town bus stand.",
+    "source_type": "official",
+    "district": "Yelahanka",
+    "metadata": {
+      "source_org": "SDRF Karnataka",
+      "affected_zones": 2,
+      "population_affected": 28000,
+      "relief_camps": 2,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 13.095,
+      "lng": 77.594,
+      "name": "Kogilu Cross"
+    },
+    "_gt_district": "Yelahanka"
+  },
+  {
+    "id": "off-007",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-04T06:00:00Z",
+    "sender_id": "revenue-department",
+    "raw_text": "REVENUE DEPARTMENT SITUATION NOTE: The Kogilu-Thanisandra culvert has collapsed and the Jakkur wetland overflow is crossing the approach road. Thanisandra is accessible only via the northern diversion. Damage assessment teams are moving in.",
+    "source_type": "official",
+    "district": "Yelahanka",
+    "metadata": {
+      "source_org": "Revenue Department",
+      "affected_zones": 2,
+      "population_affected": 33000,
+      "relief_camps": 2,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 13.0705,
+      "lng": 77.6355,
+      "name": "Kogilu-Thanisandra Culvert"
+    },
+    "_gt_district": "Yelahanka"
+  },
+  {
+    "id": "off-008",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-04T13:00:00Z",
+    "sender_id": "bbmp-control-room",
+    "raw_text": "HEBBAL BUND ALERT: Seepage has been observed along the Hebbal lake bund. The Kempapura substation area has been de-energised as a precaution. Residents should stay clear of the lake bund and flooded service roads.",
+    "source_type": "official",
+    "district": "North Bengaluru",
+    "metadata": {
+      "source_org": "BBMP Control Room",
+      "affected_zones": 2,
+      "population_affected": 46000,
+      "relief_camps": 2,
+      "deaths": 0
+    },
+    "location_hint": {
+      "lat": 13.045,
+      "lng": 77.591,
+      "name": "Hebbal Lake Bund"
+    },
+    "_gt_district": "North Bengaluru"
+  },
+  {
+    "id": "off-009",
+    "channel": "official",
+    "provenance": "reconstructed",
+    "timestamp": "2022-09-05T07:00:00Z",
+    "sender_id": "bbmp-chief-commissioner",
+    "raw_text": "BBMP CITY UPDATE: 14 relief camps are operational and water levels are receding in parts of the ORR and Koramangala corridors. Damage assessment for flooded layouts has started. Citizens are requested to report unreached pockets to the control room.",
+    "source_type": "official",
+    "district": "Central Bengaluru",
+    "metadata": {
+      "source_org": "BBMP Chief Commissioner",
+      "affected_zones": 8,
+      "population_affected": 210000,
+      "relief_camps": 14,
+      "deaths": 1
+    },
+    "location_hint": {
+      "lat": 12.975,
+      "lng": 77.6,
+      "name": "BBMP Central Control Room"
+    },
+    "_gt_district": "Central Bengaluru"
+  }
+]
